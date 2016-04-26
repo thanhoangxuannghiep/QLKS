@@ -76,6 +76,8 @@
             this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.tabContent = new DevExpress.XtraTab.XtraTabControl();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -141,7 +143,7 @@
             this.btnThayDoiQuiDinh});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 66;
+            this.ribbonControl.MaxItemId = 67;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -547,6 +549,19 @@
             this.splitContainerControl.Text = "splitContainerControl1";
             this.splitContainerControl.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainerControl_Paint);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Thay Đổi Qui Định";
+            this.barButtonItem1.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.barButtonItem1.Id = 65;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnThayDoiQuiDinh);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Thay Đổi Qui Định";
+            // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -563,6 +578,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "PHAN MEM QUAN LY KHACH SAN _ Izzy Team";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
@@ -629,5 +645,7 @@
         private DevExpress.XtraBars.PopupControlContainer popupControlContainer1;
         private DevExpress.XtraTab.XtraTabControl tabContent;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

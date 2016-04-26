@@ -93,5 +93,11 @@ namespace QuanlyKS_izzy
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            UserControls.MainForm mainForm = new UserControls.MainForm();
+            addNewTab("Main", mainForm);
+        }
     }
 }
