@@ -1,0 +1,15 @@
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\bin\Debug\QuanlyKS_izzy.exe
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\bin\Debug\QuanlyKS_izzy.pdb
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.csprojResolveAssemblyReference.cache
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.Form1.resources
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.Properties.Resources.resources
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.UCKhachHang.resources
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.UcThayDoiQuiDinh.resources
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.UcThuePhong.resources
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.csproj.GenerateResource.Cache
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.exe.licenses
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.exe
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.pdb
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.ucServices.resources
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.ucBill.resources
+C:\Users\s4t0r1n\Documents\Visual Studio 2013\Projects\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.ucRent.resources
