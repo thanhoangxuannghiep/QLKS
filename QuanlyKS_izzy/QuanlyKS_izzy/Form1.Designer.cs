@@ -30,36 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
-            this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
-            this.mailGroup = new DevExpress.XtraNavBar.NavBarGroup();
-            this.inboxItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.outboxItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.draftsItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.trashItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.organizerGroup = new DevExpress.XtraNavBar.NavBarGroup();
-            this.calendarItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.tasksItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
-            this.tabContent = new DevExpress.XtraTab.XtraTabControl();
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
-            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
-            this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.iNew = new DevExpress.XtraBars.BarButtonItem();
             this.iOpen = new DevExpress.XtraBars.BarButtonItem();
+            this.iClose = new DevExpress.XtraBars.BarButtonItem();
+            this.iFind = new DevExpress.XtraBars.BarButtonItem();
             this.iSave = new DevExpress.XtraBars.BarButtonItem();
             this.iSaveAs = new DevExpress.XtraBars.BarButtonItem();
             this.iExit = new DevExpress.XtraBars.BarButtonItem();
-            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
-            this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
-            this.iClose = new DevExpress.XtraBars.BarButtonItem();
-            this.iFind = new DevExpress.XtraBars.BarButtonItem();
             this.iHelp = new DevExpress.XtraBars.BarButtonItem();
             this.iAbout = new DevExpress.XtraBars.BarButtonItem();
             this.siStatus = new DevExpress.XtraBars.BarStaticItem();
@@ -75,6 +56,7 @@
             this.rgbiSkins = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.btnThuePhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuanLyKH = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThayDoiQuiDinh = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,128 +65,31 @@
             this.exitRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupPhong = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupQLKH = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnThayDoiQuiDinh = new DevExpress.XtraBars.BarButtonItem();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
-            this.splitContainerControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
+            this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
+            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
+            this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
+            this.tabContent = new DevExpress.XtraTab.XtraTabControl();
+            this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabContent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
-            this.popupControlContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
-            this.popupControlContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
+            this.popupControlContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
+            this.popupControlContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabContent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
+            this.splitContainerControl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainerControl
-            // 
-            this.splitContainerControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl.Location = new System.Drawing.Point(0, 144);
-            this.splitContainerControl.Name = "splitContainerControl";
-            this.splitContainerControl.Padding = new System.Windows.Forms.Padding(6);
-            this.splitContainerControl.Panel1.Controls.Add(this.navBarControl);
-            this.splitContainerControl.Panel1.Text = "Panel1";
-            this.splitContainerControl.Panel2.Controls.Add(this.tabContent);
-            this.splitContainerControl.Panel2.Controls.Add(this.gridControl);
-            this.splitContainerControl.Panel2.Text = "Panel2";
-            this.splitContainerControl.Size = new System.Drawing.Size(1100, 525);
-            this.splitContainerControl.SplitterPosition = 165;
-            this.splitContainerControl.TabIndex = 0;
-            this.splitContainerControl.Text = "splitContainerControl1";
-            // 
-            // navBarControl
-            // 
-            this.navBarControl.ActiveGroup = this.mailGroup;
-            this.navBarControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navBarControl.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.mailGroup,
-            this.organizerGroup});
-            this.navBarControl.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.inboxItem,
-            this.outboxItem,
-            this.draftsItem,
-            this.trashItem,
-            this.calendarItem,
-            this.tasksItem});
-            this.navBarControl.LargeImages = this.navbarImageCollectionLarge;
-            this.navBarControl.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl.Name = "navBarControl";
-            this.navBarControl.OptionsNavPane.ExpandedWidth = 165;
-            this.navBarControl.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
-            this.navBarControl.Size = new System.Drawing.Size(165, 513);
-            this.navBarControl.SmallImages = this.navbarImageCollection;
-            this.navBarControl.StoreDefaultPaintStyleName = true;
-            this.navBarControl.TabIndex = 0;
-            this.navBarControl.Text = "navBarControl1";
-            // 
-            // mailGroup
-            // 
-            this.mailGroup.Caption = "Mail";
-            this.mailGroup.Expanded = true;
-            this.mailGroup.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.inboxItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.outboxItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.draftsItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.trashItem)});
-            this.mailGroup.LargeImageIndex = 0;
-            this.mailGroup.Name = "mailGroup";
-            // 
-            // inboxItem
-            // 
-            this.inboxItem.Caption = "Inbox";
-            this.inboxItem.Name = "inboxItem";
-            this.inboxItem.SmallImageIndex = 0;
-            // 
-            // outboxItem
-            // 
-            this.outboxItem.Caption = "Outbox";
-            this.outboxItem.Name = "outboxItem";
-            this.outboxItem.SmallImageIndex = 1;
-            // 
-            // draftsItem
-            // 
-            this.draftsItem.Caption = "Drafts";
-            this.draftsItem.Name = "draftsItem";
-            this.draftsItem.SmallImageIndex = 2;
-            // 
-            // trashItem
-            // 
-            this.trashItem.Caption = "Trash";
-            this.trashItem.Name = "trashItem";
-            this.trashItem.SmallImageIndex = 3;
-            // 
-            // organizerGroup
-            // 
-            this.organizerGroup.Caption = "Organizer";
-            this.organizerGroup.Expanded = true;
-            this.organizerGroup.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.calendarItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.tasksItem)});
-            this.organizerGroup.LargeImageIndex = 1;
-            this.organizerGroup.Name = "organizerGroup";
-            // 
-            // calendarItem
-            // 
-            this.calendarItem.Caption = "Calendar";
-            this.calendarItem.Name = "calendarItem";
-            this.calendarItem.SmallImageIndex = 4;
-            // 
-            // tasksItem
-            // 
-            this.tasksItem.Caption = "Tasks";
-            this.tasksItem.Name = "tasksItem";
-            this.tasksItem.SmallImageIndex = 5;
             // 
             // navbarImageCollectionLarge
             // 
@@ -224,36 +109,8 @@
             this.navbarImageCollection.Images.SetKeyName(4, "Calendar_16x16.png");
             this.navbarImageCollection.Images.SetKeyName(5, "Tasks_16x16.png");
             // 
-            // tabContent
-            // 
-            this.tabContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabContent.Location = new System.Drawing.Point(1, 0);
-            this.tabContent.Name = "tabContent";
-            this.tabContent.Size = new System.Drawing.Size(923, 519);
-            this.tabContent.TabIndex = 1;
-            // 
-            // gridControl
-            // 
-            this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.Location = new System.Drawing.Point(0, 0);
-            this.gridControl.MainView = this.gridView1;
-            this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(918, 513);
-            this.gridControl.TabIndex = 0;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.gridView1.GridControl = this.gridControl;
-            this.gridView1.Name = "gridView1";
-            // 
             // ribbonControl
             // 
-            this.ribbonControl.ApplicationButtonDropDownControl = this.appMenu;
             this.ribbonControl.ApplicationButtonText = null;
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Images = this.ribbonImageCollection;
@@ -291,7 +148,7 @@
             this.homeRibbonPage,
             this.helpRibbonPage});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl.Size = new System.Drawing.Size(1100, 144);
+            this.ribbonControl.Size = new System.Drawing.Size(1356, 144);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iNew);
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iOpen);
@@ -299,42 +156,9 @@
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iSaveAs);
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iHelp);
             // 
-            // appMenu
+            // ribbonImageCollection
             // 
-            this.appMenu.BottomPaneControlContainer = this.popupControlContainer2;
-            this.appMenu.ItemLinks.Add(this.iNew);
-            this.appMenu.ItemLinks.Add(this.iOpen);
-            this.appMenu.ItemLinks.Add(this.iSave);
-            this.appMenu.ItemLinks.Add(this.iSaveAs);
-            this.appMenu.ItemLinks.Add(this.iExit);
-            this.appMenu.Name = "appMenu";
-            this.appMenu.Ribbon = this.ribbonControl;
-            this.appMenu.RightPaneControlContainer = this.popupControlContainer1;
-            this.appMenu.ShowRightPane = true;
-            // 
-            // popupControlContainer2
-            // 
-            this.popupControlContainer2.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.popupControlContainer2.Appearance.Options.UseBackColor = true;
-            this.popupControlContainer2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.popupControlContainer2.Controls.Add(this.buttonEdit);
-            this.popupControlContainer2.Location = new System.Drawing.Point(238, 289);
-            this.popupControlContainer2.Name = "popupControlContainer2";
-            this.popupControlContainer2.Ribbon = this.ribbonControl;
-            this.popupControlContainer2.Size = new System.Drawing.Size(118, 28);
-            this.popupControlContainer2.TabIndex = 3;
-            this.popupControlContainer2.Visible = false;
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.EditValue = "Some Text";
-            this.buttonEdit.Location = new System.Drawing.Point(3, 5);
-            this.buttonEdit.MenuManager = this.ribbonControl;
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit.Size = new System.Drawing.Size(100, 20);
-            this.buttonEdit.TabIndex = 0;
+            this.ribbonImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollection.ImageStream")));
             // 
             // iNew
             // 
@@ -356,6 +180,28 @@
             this.iOpen.LargeImageIndex = 1;
             this.iOpen.Name = "iOpen";
             this.iOpen.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // iClose
+            // 
+            this.iClose.Caption = "&Close";
+            this.iClose.Description = "Closes the active document.";
+            this.iClose.Hint = "Closes the active document";
+            this.iClose.Id = 3;
+            this.iClose.ImageIndex = 2;
+            this.iClose.LargeImageIndex = 2;
+            this.iClose.Name = "iClose";
+            this.iClose.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // iFind
+            // 
+            this.iFind.Caption = "Find";
+            this.iFind.Description = "Searches for the specified info.";
+            this.iFind.Hint = "Searches for the specified info";
+            this.iFind.Id = 15;
+            this.iFind.ImageIndex = 3;
+            this.iFind.LargeImageIndex = 3;
+            this.iFind.Name = "iFind";
+            this.iFind.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // iSave
             // 
@@ -386,77 +232,6 @@
             this.iExit.ImageIndex = 6;
             this.iExit.LargeImageIndex = 6;
             this.iExit.Name = "iExit";
-            // 
-            // popupControlContainer1
-            // 
-            this.popupControlContainer1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.popupControlContainer1.Appearance.Options.UseBackColor = true;
-            this.popupControlContainer1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.popupControlContainer1.Controls.Add(this.someLabelControl2);
-            this.popupControlContainer1.Controls.Add(this.someLabelControl1);
-            this.popupControlContainer1.Location = new System.Drawing.Point(111, 197);
-            this.popupControlContainer1.Name = "popupControlContainer1";
-            this.popupControlContainer1.Ribbon = this.ribbonControl;
-            this.popupControlContainer1.Size = new System.Drawing.Size(76, 70);
-            this.popupControlContainer1.TabIndex = 2;
-            this.popupControlContainer1.Visible = false;
-            // 
-            // someLabelControl2
-            // 
-            this.someLabelControl2.Location = new System.Drawing.Point(3, 57);
-            this.someLabelControl2.Name = "someLabelControl2";
-            this.someLabelControl2.Size = new System.Drawing.Size(49, 13);
-            this.someLabelControl2.TabIndex = 0;
-            this.someLabelControl2.Text = "Some Info";
-            // 
-            // someLabelControl1
-            // 
-            this.someLabelControl1.Location = new System.Drawing.Point(3, 3);
-            this.someLabelControl1.Name = "someLabelControl1";
-            this.someLabelControl1.Size = new System.Drawing.Size(49, 13);
-            this.someLabelControl1.TabIndex = 0;
-            this.someLabelControl1.Text = "Some Info";
-            // 
-            // ribbonImageCollection
-            // 
-            this.ribbonImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollection.ImageStream")));
-            this.ribbonImageCollection.Images.SetKeyName(0, "Ribbon_New_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(1, "Ribbon_Open_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(2, "Ribbon_Close_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(3, "Ribbon_Find_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(4, "Ribbon_Save_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(5, "Ribbon_SaveAs_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(6, "Ribbon_Exit_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(7, "Ribbon_Content_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(8, "Ribbon_Info_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(9, "Ribbon_Bold_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(10, "Ribbon_Italic_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(11, "Ribbon_Underline_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(12, "Ribbon_AlignLeft_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(13, "Ribbon_AlignCenter_16x16.png");
-            this.ribbonImageCollection.Images.SetKeyName(14, "Ribbon_AlignRight_16x16.png");
-            // 
-            // iClose
-            // 
-            this.iClose.Caption = "&Close";
-            this.iClose.Description = "Closes the active document.";
-            this.iClose.Hint = "Closes the active document";
-            this.iClose.Id = 3;
-            this.iClose.ImageIndex = 2;
-            this.iClose.LargeImageIndex = 2;
-            this.iClose.Name = "iClose";
-            this.iClose.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // iFind
-            // 
-            this.iFind.Caption = "Find";
-            this.iFind.Description = "Searches for the specified info.";
-            this.iFind.Hint = "Searches for the specified info";
-            this.iFind.Id = 15;
-            this.iFind.ImageIndex = 3;
-            this.iFind.LargeImageIndex = 3;
-            this.iFind.Name = "iFind";
-            this.iFind.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // iHelp
             // 
@@ -586,6 +361,14 @@
             this.btnQuanLyKH.Name = "btnQuanLyKH";
             this.btnQuanLyKH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanLyKH_ItemClick);
             // 
+            // btnThayDoiQuiDinh
+            // 
+            this.btnThayDoiQuiDinh.Caption = "Thay Đổi Qui Định";
+            this.btnThayDoiQuiDinh.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnThayDoiQuiDinh.Id = 65;
+            this.btnThayDoiQuiDinh.Name = "btnThayDoiQuiDinh";
+            this.btnThayDoiQuiDinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThayDoiQuiDinh_ItemClick);
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -656,6 +439,12 @@
             this.ribbonPageGroupQLKH.Name = "ribbonPageGroupQLKH";
             this.ribbonPageGroupQLKH.Text = "Quản Lý Khách Hàng";
             // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnThayDoiQuiDinh);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Thay Đổi Qui Định";
+            // 
             // helpRibbonPage
             // 
             this.helpRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -674,31 +463,96 @@
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.siStatus);
             this.ribbonStatusBar.ItemLinks.Add(this.siInfo);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 669);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 736);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1100, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1356, 31);
             // 
-            // ribbonPageGroup1
+            // buttonEdit
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnThayDoiQuiDinh);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Thay Đổi Qui Định";
+            this.buttonEdit.EditValue = "Some Text";
+            this.buttonEdit.Location = new System.Drawing.Point(3, 5);
+            this.buttonEdit.MenuManager = this.ribbonControl;
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.buttonEdit.Size = new System.Drawing.Size(100, 20);
+            this.buttonEdit.TabIndex = 0;
             // 
-            // btnThayDoiQuiDinh
+            // popupControlContainer2
             // 
-            this.btnThayDoiQuiDinh.Caption = "Thay Đổi Qui Định";
-            this.btnThayDoiQuiDinh.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.btnThayDoiQuiDinh.Id = 65;
-            this.btnThayDoiQuiDinh.Name = "btnThayDoiQuiDinh";
-            this.btnThayDoiQuiDinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThayDoiQuiDinh_ItemClick);
+            this.popupControlContainer2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.popupControlContainer2.Appearance.Options.UseBackColor = true;
+            this.popupControlContainer2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.popupControlContainer2.Controls.Add(this.buttonEdit);
+            this.popupControlContainer2.Location = new System.Drawing.Point(238, 289);
+            this.popupControlContainer2.Name = "popupControlContainer2";
+            this.popupControlContainer2.Ribbon = this.ribbonControl;
+            this.popupControlContainer2.Size = new System.Drawing.Size(118, 28);
+            this.popupControlContainer2.TabIndex = 3;
+            this.popupControlContainer2.Visible = false;
+            // 
+            // someLabelControl1
+            // 
+            this.someLabelControl1.Location = new System.Drawing.Point(3, 3);
+            this.someLabelControl1.Name = "someLabelControl1";
+            this.someLabelControl1.Size = new System.Drawing.Size(49, 13);
+            this.someLabelControl1.TabIndex = 0;
+            this.someLabelControl1.Text = "Some Info";
+            // 
+            // someLabelControl2
+            // 
+            this.someLabelControl2.Location = new System.Drawing.Point(3, 57);
+            this.someLabelControl2.Name = "someLabelControl2";
+            this.someLabelControl2.Size = new System.Drawing.Size(49, 13);
+            this.someLabelControl2.TabIndex = 0;
+            this.someLabelControl2.Text = "Some Info";
+            // 
+            // popupControlContainer1
+            // 
+            this.popupControlContainer1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.popupControlContainer1.Appearance.Options.UseBackColor = true;
+            this.popupControlContainer1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.popupControlContainer1.Controls.Add(this.someLabelControl2);
+            this.popupControlContainer1.Controls.Add(this.someLabelControl1);
+            this.popupControlContainer1.Location = new System.Drawing.Point(111, 197);
+            this.popupControlContainer1.Name = "popupControlContainer1";
+            this.popupControlContainer1.Ribbon = this.ribbonControl;
+            this.popupControlContainer1.Size = new System.Drawing.Size(76, 70);
+            this.popupControlContainer1.TabIndex = 2;
+            this.popupControlContainer1.Visible = false;
+            // 
+            // tabContent
+            // 
+            this.tabContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabContent.Location = new System.Drawing.Point(0, 0);
+            this.tabContent.Name = "tabContent";
+            this.tabContent.Size = new System.Drawing.Size(1339, 580);
+            this.tabContent.TabIndex = 1;
+            // 
+            // splitContainerControl
+            // 
+            this.splitContainerControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl.Location = new System.Drawing.Point(0, 144);
+            this.splitContainerControl.Name = "splitContainerControl";
+            this.splitContainerControl.Padding = new System.Windows.Forms.Padding(6);
+            this.splitContainerControl.Panel1.AutoScroll = true;
+            this.splitContainerControl.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.splitContainerControl.Panel1.Text = "Panel1";
+            this.splitContainerControl.Panel2.Controls.Add(this.tabContent);
+            this.splitContainerControl.Panel2.Text = "Panel2";
+            this.splitContainerControl.Size = new System.Drawing.Size(1356, 592);
+            this.splitContainerControl.SplitterPosition = 0;
+            this.splitContainerControl.TabIndex = 0;
+            this.splitContainerControl.Text = "splitContainerControl1";
+            this.splitContainerControl.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainerControl_Paint);
             // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.ClientSize = new System.Drawing.Size(1356, 767);
             this.Controls.Add(this.splitContainerControl);
             this.Controls.Add(this.popupControlContainer1);
             this.Controls.Add(this.popupControlContainer2);
@@ -706,33 +560,29 @@
             this.Controls.Add(this.ribbonControl);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
-            this.splitContainerControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).EndInit();
+            this.Text = "PHAN MEM QUAN LY KHACH SAN _ Izzy Team";
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabContent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).EndInit();
             this.popupControlContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).EndInit();
             this.popupControlContainer1.ResumeLayout(false);
             this.popupControlContainer1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabContent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
+            this.splitContainerControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraBars.BarButtonItem iNew;
         private DevExpress.XtraBars.BarButtonItem iOpen;
@@ -761,35 +611,23 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup exitRibbonPageGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPage helpRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup helpRibbonPageGroup;
-        private DevExpress.XtraBars.Ribbon.ApplicationMenu appMenu;
-        private DevExpress.XtraBars.PopupControlContainer popupControlContainer1;
-        private DevExpress.XtraEditors.LabelControl someLabelControl2;
-        private DevExpress.XtraEditors.LabelControl someLabelControl1;
-        private DevExpress.XtraBars.PopupControlContainer popupControlContainer2;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.Utils.ImageCollection ribbonImageCollection;
         private DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
-        private DevExpress.XtraNavBar.NavBarControl navBarControl;
-        private DevExpress.XtraNavBar.NavBarGroup mailGroup;
-        private DevExpress.XtraNavBar.NavBarGroup organizerGroup;
-        private DevExpress.XtraNavBar.NavBarItem inboxItem;
-        private DevExpress.XtraNavBar.NavBarItem outboxItem;
-        private DevExpress.XtraNavBar.NavBarItem draftsItem;
-        private DevExpress.XtraNavBar.NavBarItem trashItem;
-        private DevExpress.XtraNavBar.NavBarItem calendarItem;
-        private DevExpress.XtraNavBar.NavBarItem tasksItem;
         private DevExpress.Utils.ImageCollection navbarImageCollection;
         private DevExpress.Utils.ImageCollection navbarImageCollectionLarge;
-        private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraTab.XtraTabControl tabContent;
         private DevExpress.XtraBars.BarButtonItem btnThuePhong;
         private DevExpress.XtraBars.BarButtonItem btnQuanLyKH;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupPhong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupQLKH;
         private DevExpress.XtraBars.BarButtonItem btnThayDoiQuiDinh;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-
+        private DevExpress.XtraEditors.ButtonEdit buttonEdit;
+        private DevExpress.XtraBars.PopupControlContainer popupControlContainer2;
+        private DevExpress.XtraEditors.LabelControl someLabelControl1;
+        private DevExpress.XtraEditors.LabelControl someLabelControl2;
+        private DevExpress.XtraBars.PopupControlContainer popupControlContainer1;
+        private DevExpress.XtraTab.XtraTabControl tabContent;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl;
     }
 }

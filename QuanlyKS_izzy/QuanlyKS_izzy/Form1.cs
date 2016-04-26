@@ -34,12 +34,7 @@ namespace QuanlyKS_izzy
         BindingList<Person> gridDataList = new BindingList<Person>();
         void InitGrid()
         {
-            gridDataList.Add(new Person("John", "Smith"));
-            gridDataList.Add(new Person("Gabriel", "Smith"));
-            gridDataList.Add(new Person("Ashley", "Smith", "some comment"));
-            gridDataList.Add(new Person("Adrian", "Smith", "some comment"));
-            gridDataList.Add(new Person("Gabriella", "Smith", "some comment"));
-            gridControl.DataSource = gridDataList;
+            
         }
 
         private void btnThuePhong_ItemClick(object sender, ItemClickEventArgs e)
@@ -87,6 +82,16 @@ namespace QuanlyKS_izzy
         {
             UserControls.UcThayDoiQuiDinh ucThayDoiQuiDinh = new UserControls.UcThayDoiQuiDinh();
             addNewTab("Thay Đổi Qui Định", ucThayDoiQuiDinh);
+        }
+
+        private void gridControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainerControl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

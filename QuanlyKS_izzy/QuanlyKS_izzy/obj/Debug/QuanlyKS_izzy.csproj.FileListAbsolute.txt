@@ -1,0 +1,15 @@
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\bin\Debug\QuanlyKS_izzy.exe
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\bin\Debug\QuanlyKS_izzy.pdb
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.csprojResolveAssemblyReference.cache
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.Form1.resources
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.Properties.Resources.resources
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.UCKhachHang.resources
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.UcThayDoiQuiDinh.resources
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.UcThuePhong.resources
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.csproj.GenerateResource.Cache
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.exe.licenses
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.exe
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.pdb
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.LoginForm.resources
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.mainForm.resources
+E:\Git\CNPM\QLKS\QuanlyKS_izzy\QuanlyKS_izzy\obj\Debug\QuanlyKS_izzy.UserControls.MainForm.resources

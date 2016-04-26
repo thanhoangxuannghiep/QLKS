@@ -20,6 +20,7 @@ namespace QuanlyKS_izzy
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
+            //Application.Run(new UserControls.LoginForm());
             Application.Run(new Form1());
         }
     }
