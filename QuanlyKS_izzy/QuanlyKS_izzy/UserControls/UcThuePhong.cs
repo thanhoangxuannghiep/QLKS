@@ -19,11 +19,54 @@ namespace QuanlyKS_izzy.UserControls
         }
         public void loadGalleryPhong()
         {
-            
+            galleryControl1.Gallery.Groups[0].Items.Clear();
+            Bitmap image;
+
+            int count = 0;
+            for (int i = 0; i < 4; i++ )
+            {
+                count++;
+                if (count == 1)
+                {
+                    image = new Bitmap(Properties.Resources.close);
+                }
+                else
+                {
+                    image = new Bitmap(Properties.Resources.open);
+                }
+
+                GalleryItem item = new GalleryItem(image, "Phòng " + count, "P" + count);
+                //item.Tag = p.MaLoaiPhong.ToString();
+                galleryControl1.Gallery.Groups[0].Items.Add(item);
+            }
+        }
+
+        public void loadGalleryLau()
+        {
+            galleryControlTang.Gallery.Groups[0].Items.Clear();
+            Bitmap image;
+
+            int count = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                count++;
+                if (count == 1)
+                {
+                    image = new Bitmap(Properties.Resources.hotel);
+                }
+                else
+                {
+                    image = new Bitmap(Properties.Resources.hotel);
+                }
+
+                GalleryItem item = new GalleryItem(image, "Phòng " + count, "P" + count);
+                //item.Tag = p.MaLoaiPhong.ToString();
+                galleryControl1.Gallery.Groups[0].Items.Add(item);
+            }
         }
         private void UcThuePhong_Load(object sender, EventArgs e)
         {
-
+            loadGalleryPhong();
         }
 
         public void showBill(string mPhong)

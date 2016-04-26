@@ -31,7 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcThuePhong));
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -1012,10 +1015,16 @@
             // galleryControlGallery1
             // 
             galleryItemGroup2.Caption = "Danh Sách Phòng";
+            galleryItem3.Caption = "Item9";
+            galleryItem3.Image = global::QuanlyKS_izzy.Properties.Resources.open;
+            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem3});
             this.galleryControl1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
             galleryItemGroup2});
             this.galleryControl1.Gallery.HoverImageSize = new System.Drawing.Size(90, 90);
             this.galleryControl1.Gallery.ImageSize = new System.Drawing.Size(70, 70);
+            this.galleryControl1.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
+            this.galleryControl1.Gallery.ShowItemText = true;
             this.galleryControl1.Gallery.ItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.galleryControl1_Gallery_ItemClick);
             this.galleryControl1.Location = new System.Drawing.Point(210, 31);
             this.galleryControl1.Name = "galleryControl1";
@@ -1060,8 +1069,20 @@
             // galleryControlGallery2
             // 
             galleryItemGroup1.Caption = "Tầng";
+            galleryItem1.Caption = "Tầng 1";
+            galleryItem1.Description = "Tầng 1";
+            galleryItem1.Image = global::QuanlyKS_izzy.Properties.Resources.hotel;
+            galleryItem2.Caption = "Tầng 2";
+            galleryItem2.Description = "Tầng 2";
+            galleryItem2.Image = global::QuanlyKS_izzy.Properties.Resources.hotel;
+            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem1,
+            galleryItem2});
             this.galleryControlTang.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
             galleryItemGroup1});
+            this.galleryControlTang.Gallery.ImageSize = new System.Drawing.Size(128, 128);
+            this.galleryControlTang.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
+            this.galleryControlTang.Gallery.ShowItemText = true;
             this.galleryControlTang.Location = new System.Drawing.Point(2, 27);
             this.galleryControlTang.Name = "galleryControlTang";
             this.galleryControlTang.Size = new System.Drawing.Size(204, 534);
