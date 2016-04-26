@@ -12,6 +12,8 @@ using DevExpress.XtraBars.Helpers;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DevExpress.UserSkins;
+using DevExpress.XtraTab;
+using DevExpress.XtraEditors;
 
 
 namespace QuanlyKS_izzy
@@ -40,5 +42,51 @@ namespace QuanlyKS_izzy
             gridControl.DataSource = gridDataList;
         }
 
+        private void btnThuePhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.UcThuePhong ucThuePhong = new UserControls.UcThuePhong();
+            addNewTab("Thuê Phòng", ucThuePhong);
+        }
+        public void addNewTab(string tabName, UserControl uc)
+        {
+            foreach (XtraTabPage tabpage in tabContent.TabPages)
+            {
+                if (tabName == tabpage.Text)
+                {
+                    tabContent.SelectedTabPage = tabpage;
+                    return;
+                }
+            }
+            //tao 1 panel
+            PanelControl panel = new PanelControl();
+            panel.Dock = DockStyle.Fill;
+            panel.Name = "panel" + tabName;
+            panel.TabIndex = 2;
+
+            //tao tabpage
+            XtraTabPage newtabPage = new XtraTabPage();
+            newtabPage.Name = tabName;
+            newtabPage.Text = tabName;
+
+            //add user control vao panel
+            uc.Dock = DockStyle.Fill;
+            panel.Controls.Add(uc);
+
+            newtabPage.Controls.Add(panel);
+            tabContent.TabPages.Add(newtabPage);
+            tabContent.SelectedTabPage = newtabPage;
+        }
+
+        private void btnQuanLyKH_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.UCKhachHang ucKhachHang = new UserControls.UCKhachHang();
+            addNewTab("Quản Lý Khách Hàng", ucKhachHang);
+        }
+
+        private void btnThayDoiQuiDinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.UcThayDoiQuiDinh ucThayDoiQuiDinh = new UserControls.UcThayDoiQuiDinh();
+            addNewTab("Thay Đổi Qui Định", ucThayDoiQuiDinh);
+        }
     }
 }

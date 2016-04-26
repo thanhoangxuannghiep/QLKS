@@ -42,6 +42,7 @@
             this.tasksItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.tabContent = new DevExpress.XtraTab.XtraTabControl();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -72,20 +73,27 @@
             this.iCenterTextAlign = new DevExpress.XtraBars.BarButtonItem();
             this.iRightTextAlign = new DevExpress.XtraBars.BarButtonItem();
             this.rgbiSkins = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.btnThuePhong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnQuanLyKH = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.formatRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.skinsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.exitRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroupPhong = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroupQLKH = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnThayDoiQuiDinh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabContent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -107,6 +115,7 @@
             this.splitContainerControl.Padding = new System.Windows.Forms.Padding(6);
             this.splitContainerControl.Panel1.Controls.Add(this.navBarControl);
             this.splitContainerControl.Panel1.Text = "Panel1";
+            this.splitContainerControl.Panel2.Controls.Add(this.tabContent);
             this.splitContainerControl.Panel2.Controls.Add(this.gridControl);
             this.splitContainerControl.Panel2.Text = "Panel2";
             this.splitContainerControl.Size = new System.Drawing.Size(1100, 525);
@@ -215,6 +224,16 @@
             this.navbarImageCollection.Images.SetKeyName(4, "Calendar_16x16.png");
             this.navbarImageCollection.Images.SetKeyName(5, "Tasks_16x16.png");
             // 
+            // tabContent
+            // 
+            this.tabContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabContent.Location = new System.Drawing.Point(1, 0);
+            this.tabContent.Name = "tabContent";
+            this.tabContent.Size = new System.Drawing.Size(923, 519);
+            this.tabContent.TabIndex = 1;
+            // 
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -259,10 +278,13 @@
             this.iLeftTextAlign,
             this.iCenterTextAlign,
             this.iRightTextAlign,
-            this.rgbiSkins});
+            this.rgbiSkins,
+            this.btnThuePhong,
+            this.btnQuanLyKH,
+            this.btnThayDoiQuiDinh});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 62;
+            this.ribbonControl.MaxItemId = 66;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -548,6 +570,22 @@
             this.rgbiSkins.Id = 60;
             this.rgbiSkins.Name = "rgbiSkins";
             // 
+            // btnThuePhong
+            // 
+            this.btnThuePhong.Caption = "Thuê Phòng";
+            this.btnThuePhong.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnThuePhong.Id = 62;
+            this.btnThuePhong.Name = "btnThuePhong";
+            this.btnThuePhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuePhong_ItemClick);
+            // 
+            // btnQuanLyKH
+            // 
+            this.btnQuanLyKH.Caption = "Quản Lý Khách Hàng";
+            this.btnQuanLyKH.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnQuanLyKH.Id = 63;
+            this.btnQuanLyKH.Name = "btnQuanLyKH";
+            this.btnQuanLyKH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanLyKH_ItemClick);
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -568,7 +606,10 @@
             this.fileRibbonPageGroup,
             this.formatRibbonPageGroup,
             this.skinsRibbonPageGroup,
-            this.exitRibbonPageGroup});
+            this.exitRibbonPageGroup,
+            this.ribbonPageGroupPhong,
+            this.ribbonPageGroupQLKH,
+            this.ribbonPageGroup1});
             this.homeRibbonPage.Name = "homeRibbonPage";
             this.homeRibbonPage.Text = "Home";
             // 
@@ -603,6 +644,18 @@
             this.exitRibbonPageGroup.Name = "exitRibbonPageGroup";
             this.exitRibbonPageGroup.Text = "Exit";
             // 
+            // ribbonPageGroupPhong
+            // 
+            this.ribbonPageGroupPhong.ItemLinks.Add(this.btnThuePhong);
+            this.ribbonPageGroupPhong.Name = "ribbonPageGroupPhong";
+            this.ribbonPageGroupPhong.Text = "Phòng";
+            // 
+            // ribbonPageGroupQLKH
+            // 
+            this.ribbonPageGroupQLKH.ItemLinks.Add(this.btnQuanLyKH);
+            this.ribbonPageGroupQLKH.Name = "ribbonPageGroupQLKH";
+            this.ribbonPageGroupQLKH.Text = "Quản Lý Khách Hàng";
+            // 
             // helpRibbonPage
             // 
             this.helpRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -626,6 +679,20 @@
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1100, 31);
             // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnThayDoiQuiDinh);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Thay Đổi Qui Định";
+            // 
+            // btnThayDoiQuiDinh
+            // 
+            this.btnThayDoiQuiDinh.Caption = "Thay Đổi Qui Định";
+            this.btnThayDoiQuiDinh.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnThayDoiQuiDinh.Id = 65;
+            this.btnThayDoiQuiDinh.Name = "btnThayDoiQuiDinh";
+            this.btnThayDoiQuiDinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThayDoiQuiDinh_ItemClick);
+            // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -646,6 +713,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabContent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
@@ -715,6 +783,13 @@
         private DevExpress.Utils.ImageCollection navbarImageCollectionLarge;
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraTab.XtraTabControl tabContent;
+        private DevExpress.XtraBars.BarButtonItem btnThuePhong;
+        private DevExpress.XtraBars.BarButtonItem btnQuanLyKH;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupPhong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupQLKH;
+        private DevExpress.XtraBars.BarButtonItem btnThayDoiQuiDinh;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
 
     }
 }
