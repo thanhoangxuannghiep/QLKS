@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcThuePhong));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -127,6 +127,7 @@
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
             this.galleryControlTang = new DevExpress.XtraBars.Ribbon.GalleryControl();
             this.galleryControlClient2 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
@@ -187,6 +188,8 @@
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
             this.panelControl9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
+            this.panelControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galleryControlTang)).BeginInit();
             this.galleryControlTang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
@@ -1011,24 +1014,25 @@
             this.galleryControl1.Controls.Add(this.galleryControlClient1);
             this.galleryControl1.DesignGalleryGroupIndex = 0;
             this.galleryControl1.DesignGalleryItemIndex = 0;
+            this.galleryControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // galleryControlGallery1
             // 
-            galleryItemGroup2.Caption = "Danh Sách Phòng";
-            galleryItem3.Caption = "Item9";
-            galleryItem3.Image = global::QuanlyKS_izzy.Properties.Resources.open;
-            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem3});
+            galleryItemGroup1.Caption = "Danh Sách Phòng";
+            galleryItem1.Caption = "Item9";
+            galleryItem1.Image = global::QuanlyKS_izzy.Properties.Resources.open;
+            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem1});
             this.galleryControl1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup2});
+            galleryItemGroup1});
             this.galleryControl1.Gallery.HoverImageSize = new System.Drawing.Size(90, 90);
             this.galleryControl1.Gallery.ImageSize = new System.Drawing.Size(70, 70);
             this.galleryControl1.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
             this.galleryControl1.Gallery.ShowItemText = true;
             this.galleryControl1.Gallery.ItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.galleryControl1_Gallery_ItemClick);
-            this.galleryControl1.Location = new System.Drawing.Point(210, 31);
+            this.galleryControl1.Location = new System.Drawing.Point(2, 2);
             this.galleryControl1.Name = "galleryControl1";
-            this.galleryControl1.Size = new System.Drawing.Size(631, 532);
+            this.galleryControl1.Size = new System.Drawing.Size(631, 530);
             this.galleryControl1.TabIndex = 0;
             this.galleryControl1.Text = "galleryControl1";
             // 
@@ -1036,7 +1040,7 @@
             // 
             this.galleryControlClient1.GalleryControl = this.galleryControl1;
             this.galleryControlClient1.Location = new System.Drawing.Point(2, 2);
-            this.galleryControlClient1.Size = new System.Drawing.Size(610, 528);
+            this.galleryControlClient1.Size = new System.Drawing.Size(610, 526);
             // 
             // panelControl4
             // 
@@ -1050,14 +1054,23 @@
             // 
             // panelControl9
             // 
+            this.panelControl9.Controls.Add(this.panelControl10);
             this.panelControl9.Controls.Add(this.galleryControlTang);
             this.panelControl9.Controls.Add(this.panelControl8);
-            this.panelControl9.Controls.Add(this.galleryControl1);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl9.Location = new System.Drawing.Point(2, 2);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(843, 563);
             this.panelControl9.TabIndex = 5;
+            // 
+            // panelControl10
+            // 
+            this.panelControl10.Controls.Add(this.galleryControl1);
+            this.panelControl10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl10.Location = new System.Drawing.Point(206, 27);
+            this.panelControl10.Name = "panelControl10";
+            this.panelControl10.Size = new System.Drawing.Size(635, 534);
+            this.panelControl10.TabIndex = 1;
             // 
             // galleryControlTang
             // 
@@ -1068,18 +1081,18 @@
             // 
             // galleryControlGallery2
             // 
-            galleryItemGroup1.Caption = "Tầng";
-            galleryItem1.Caption = "Tầng 1";
-            galleryItem1.Description = "Tầng 1";
-            galleryItem1.Image = global::QuanlyKS_izzy.Properties.Resources.hotel;
-            galleryItem2.Caption = "Tầng 2";
-            galleryItem2.Description = "Tầng 2";
+            galleryItemGroup2.Caption = "Tầng";
+            galleryItem2.Caption = "Tầng 1";
+            galleryItem2.Description = "Tầng 1";
             galleryItem2.Image = global::QuanlyKS_izzy.Properties.Resources.hotel;
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1,
-            galleryItem2});
+            galleryItem3.Caption = "Tầng 2";
+            galleryItem3.Description = "Tầng 2";
+            galleryItem3.Image = global::QuanlyKS_izzy.Properties.Resources.hotel;
+            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem2,
+            galleryItem3});
             this.galleryControlTang.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1});
+            galleryItemGroup2});
             this.galleryControlTang.Gallery.ImageSize = new System.Drawing.Size(128, 128);
             this.galleryControlTang.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
             this.galleryControlTang.Gallery.ShowItemText = true;
@@ -1218,6 +1231,8 @@
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
             this.panelControl9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
+            this.panelControl10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.galleryControlTang)).EndInit();
             this.galleryControlTang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
@@ -1333,5 +1348,6 @@
         private System.Windows.Forms.Label lblLoaiPhong;
         private DevExpress.XtraBars.Ribbon.GalleryControl galleryControlTang;
         private DevExpress.XtraBars.Ribbon.GalleryControlClient galleryControlClient2;
+        private DevExpress.XtraEditors.PanelControl panelControl10;
     }
 }
