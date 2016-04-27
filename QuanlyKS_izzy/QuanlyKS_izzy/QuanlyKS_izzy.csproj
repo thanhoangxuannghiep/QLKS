@@ -83,11 +83,29 @@
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ucBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBill.Designer.cs">
+      <DependentUpon>ucBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCKhachHang.Designer.cs">
       <DependentUpon>UCKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucRent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucRent.Designer.cs">
+      <DependentUpon>ucRent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucServices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucServices.Designer.cs">
+      <DependentUpon>ucServices.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UcThayDoiQuiDinh.cs">
       <SubType>UserControl</SubType>
@@ -115,8 +133,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\ucBill.resx">
+      <DependentUpon>ucBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCKhachHang.resx">
       <DependentUpon>UCKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucRent.resx">
+      <DependentUpon>ucRent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucServices.resx">
+      <DependentUpon>ucServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcThayDoiQuiDinh.resx">
       <DependentUpon>UcThayDoiQuiDinh.cs</DependentUpon>

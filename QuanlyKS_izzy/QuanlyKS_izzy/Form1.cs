@@ -88,5 +88,23 @@ namespace QuanlyKS_izzy
             UserControls.UcThayDoiQuiDinh ucThayDoiQuiDinh = new UserControls.UcThayDoiQuiDinh();
             addNewTab("Thay Đổi Qui Định", ucThayDoiQuiDinh);
         }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.ucServices ucService = new UserControls.ucServices();
+            addNewTab("Dịch vụ", ucService);
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.ucBill ucBill = new UserControls.ucBill();
+            addNewTab("Hóa đơn", ucBill);
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.ucRent ucRent = new UserControls.ucRent();
+            addNewTab("Phiếu thuê", ucRent);
+        }
     }
 }
