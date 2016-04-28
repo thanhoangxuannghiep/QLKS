@@ -18,9 +18,9 @@ using DevExpress.XtraEditors;
 
 namespace QuanlyKS_izzy
 {
-    public partial class Form1 : RibbonForm
+    public partial class main : RibbonForm
     {
-        public Form1()
+        public main()
         {
             InitializeComponent();
             InitSkinGallery();
@@ -98,6 +98,11 @@ namespace QuanlyKS_izzy
         {
             UserControls.MainForm mainForm = new UserControls.MainForm();
             addNewTab("Main", mainForm);
+        }
+
+        private void ribbonControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

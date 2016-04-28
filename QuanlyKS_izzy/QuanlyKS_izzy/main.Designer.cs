@@ -1,6 +1,6 @@
 ﻿namespace QuanlyKS_izzy
 {
-    partial class Form1
+    partial class main
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -113,6 +113,7 @@
             // 
             // ribbonControl
             // 
+            this.ribbonControl.AllowCustomization = true;
             this.ribbonControl.ApplicationButtonText = null;
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Images = this.ribbonImageCollection;
@@ -157,6 +158,7 @@
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iSave);
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iSaveAs);
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iHelp);
+            this.ribbonControl.Click += new System.EventHandler(this.ribbonControl_Click);
             // 
             // ribbonImageCollection
             // 
@@ -562,7 +564,7 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Thay Đổi Qui Định";
             // 
-            // Form1
+            // main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,7 +575,7 @@
             this.Controls.Add(this.popupControlContainer2);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
-            this.Name = "Form1";
+            this.Name = "main";
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
