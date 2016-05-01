@@ -36,12 +36,6 @@ namespace QuanlyKS_izzy
         {
             
         }
-
-        private void btnThuePhong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserControls.UcThuePhong ucThuePhong = new UserControls.UcThuePhong();
-            addNewTab("Thuê Phòng", ucThuePhong);
-        }
         public void addNewTab(string tabName, UserControl uc)
         {
             foreach (XtraTabPage tabpage in tabContent.TabPages)
@@ -72,55 +66,70 @@ namespace QuanlyKS_izzy
             tabContent.SelectedTabPage = newtabPage;
         }
 
+        private void iHome_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.MainForm mainForm = new UserControls.MainForm();
+            tabContent.Controls.Clear();
+            mainForm.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(mainForm);
+        }
+        private void btnThuePhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.UcThuePhong ucThuePhong = new UserControls.UcThuePhong();
+            tabContent.Controls.Clear();
+            ucThuePhong.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(ucThuePhong);
+        }
+
         private void btnQuanLyKH_ItemClick(object sender, ItemClickEventArgs e)
         {
             UserControls.UCKhachHang ucKhachHang = new UserControls.UCKhachHang();
-            addNewTab("Quản Lý Khách Hàng", ucKhachHang);
+            tabContent.Controls.Clear();
+            ucKhachHang.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(ucKhachHang);
         }
 
-        private void btnThayDoiQuiDinh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserControls.UcThayDoiQuiDinh ucThayDoiQuiDinh = new UserControls.UcThayDoiQuiDinh();
-            addNewTab("Thay Đổi Qui Định", ucThayDoiQuiDinh);
-        }
-
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserControls.ucServices ucService = new UserControls.ucServices();
-            addNewTab("Dịch vụ", ucService);
-        }
-
-        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnHoaDon_ItemClick(object sender, ItemClickEventArgs e)
         {
             UserControls.ucBill ucBill = new UserControls.ucBill();
-            addNewTab("Hóa đơn", ucBill);
+            tabContent.Controls.Clear();
+            ucBill.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(ucBill);
         }
+        //private void btnThayDoiQuiDinh_ItemClick(object sender, ItemClickEventArgs e)
+        //{
+        //    UserControls.UcThayDoiQuiDinh ucThayDoiQuiDinh = new UserControls.UcThayDoiQuiDinh();
+        //    tabContent.Controls.Clear();
+        //    ucThayDoiQuiDinh.Dock = DockStyle.Fill;
+        //    tabContent.Controls.Add(ucThayDoiQuiDinh);
+        //}
 
-        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            UserControls.ucRent ucRent = new UserControls.ucRent();
-            addNewTab("Phiếu thuê", ucRent);
-	}
+        //private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        //{
+        //    UserControls.ucServices ucService = new UserControls.ucServices();
+        //    tabContent.Controls.Clear();
+        //    ucService.Dock = DockStyle.Fill;
+        //    tabContent.Controls.Add(ucService);
+        //}
 
-        private void gridControl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainerControl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        //private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        //{
+        //    UserControls.ucRent ucRent = new UserControls.ucRent();
+        //    tabContent.Controls.Clear();
+        //    ucRent.Dock = DockStyle.Fill;
+        //    tabContent.Controls.Add(ucRent);
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
             UserControls.MainForm mainForm = new UserControls.MainForm();
-            addNewTab("Main", mainForm);
+            tabContent.Controls.Clear();
+            mainForm.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(mainForm);
         }
 
-        private void ribbonControl_Click(object sender, EventArgs e)
-        {
+        
 
-        }
+        
     }
 }

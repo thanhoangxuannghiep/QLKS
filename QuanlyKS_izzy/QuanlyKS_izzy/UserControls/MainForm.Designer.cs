@@ -43,12 +43,12 @@
             // button4
             // 
             this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.Teal;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button4.BackgroundImage = global::QuanlyKS_izzy.Properties.Resources.cancel_Booking_room;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button4.Location = new System.Drawing.Point(118, 308);
+            this.button4.Location = new System.Drawing.Point(86, 312);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(175, 176);
             this.button4.TabIndex = 6;
@@ -60,7 +60,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::QuanlyKS_izzy.Properties.Resources.arrow1;
-            this.pictureBox3.Location = new System.Drawing.Point(145, 168);
+            this.pictureBox3.Location = new System.Drawing.Point(145, 170);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 139);
             this.pictureBox3.TabIndex = 5;
@@ -69,12 +69,12 @@
             // button3
             // 
             this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button3.BackgroundImage = global::QuanlyKS_izzy.Properties.Resources.payment;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button3.Location = new System.Drawing.Point(652, 10);
+            this.button3.Location = new System.Drawing.Point(669, 10);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(141, 160);
             this.button3.TabIndex = 4;
@@ -85,7 +85,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::QuanlyKS_izzy.Properties.Resources.arrow;
-            this.pictureBox2.Location = new System.Drawing.Point(515, 82);
+            this.pictureBox2.Location = new System.Drawing.Point(524, 82);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(141, 39);
             this.pictureBox2.TabIndex = 3;
@@ -94,12 +94,12 @@
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.Teal;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button2.BackgroundImage = global::QuanlyKS_izzy.Properties.Resources.check_in;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button2.Location = new System.Drawing.Point(382, 26);
+            this.button2.Location = new System.Drawing.Point(388, 26);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 144);
             this.button2.TabIndex = 2;
@@ -120,12 +120,12 @@
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button1.BackgroundImage = global::QuanlyKS_izzy.Properties.Resources.Booking_room1;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button1.Location = new System.Drawing.Point(118, 26);
+            this.button1.Location = new System.Drawing.Point(112, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 144);
             this.button1.TabIndex = 0;
