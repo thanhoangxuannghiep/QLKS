@@ -41,8 +41,8 @@
             this.iSave = new DevExpress.XtraBars.BarButtonItem();
             this.iSaveAs = new DevExpress.XtraBars.BarButtonItem();
             this.iHome = new DevExpress.XtraBars.BarButtonItem();
-            this.iHelp = new DevExpress.XtraBars.BarButtonItem();
-            this.iAbout = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHelp = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbout = new DevExpress.XtraBars.BarButtonItem();
             this.siStatus = new DevExpress.XtraBars.BarStaticItem();
             this.siInfo = new DevExpress.XtraBars.BarStaticItem();
             this.alignButtonGroup = new DevExpress.XtraBars.BarButtonGroup();
@@ -99,6 +99,9 @@
             this.btnTimNV = new DevExpress.XtraBars.BarButtonItem();
             this.btnTimTK = new DevExpress.XtraBars.BarButtonItem();
             this.btnTimHD = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnBackup = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImport = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -148,8 +151,8 @@
             this.iSave,
             this.iSaveAs,
             this.iHome,
-            this.iHelp,
-            this.iAbout,
+            this.btnHelp,
+            this.btnAbout,
             this.siStatus,
             this.siInfo,
             this.alignButtonGroup,
@@ -180,12 +183,14 @@
             this.btnTimPT,
             this.btnTimNV,
             this.btnTimTK,
-            this.btnTimHD});
+            this.btnTimHD,
+            this.btnBackup,
+            this.btnImport});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 99;
+            this.ribbonControl.MaxItemId = 102;
             this.ribbonControl.Name = "ribbonControl";
-            this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
+            this.ribbonControl.PageHeaderItemLinks.Add(this.btnAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.homeRibbonPage,
             this.helpRibbonPage});
@@ -197,7 +202,7 @@
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iOpen);
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iSave);
             this.ribbonControl.Toolbar.ItemLinks.Add(this.iSaveAs);
-            this.ribbonControl.Toolbar.ItemLinks.Add(this.iHelp);
+            this.ribbonControl.Toolbar.ItemLinks.Add(this.btnHelp);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // ribbonImageCollection
@@ -279,25 +284,26 @@
             this.iHome.Name = "iHome";
             this.iHome.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iHome_ItemClick);
             // 
-            // iHelp
+            // btnHelp
             // 
-            this.iHelp.Caption = "Help";
-            this.iHelp.Description = "Start the program help system.";
-            this.iHelp.Hint = "Start the program help system";
-            this.iHelp.Id = 22;
-            this.iHelp.ImageIndex = 7;
-            this.iHelp.LargeImageIndex = 7;
-            this.iHelp.Name = "iHelp";
+            this.btnHelp.Caption = "Hướng dẫn";
+            this.btnHelp.Description = "Start the program help system.";
+            this.btnHelp.Glyph = ((System.Drawing.Image)(resources.GetObject("btnHelp.Glyph")));
+            this.btnHelp.Hint = "Start the program help system";
+            this.btnHelp.Id = 22;
+            this.btnHelp.ImageIndex = 7;
+            this.btnHelp.LargeImageIndex = 7;
+            this.btnHelp.Name = "btnHelp";
             // 
-            // iAbout
+            // btnAbout
             // 
-            this.iAbout.Caption = "About";
-            this.iAbout.Description = "Displays general program information.";
-            this.iAbout.Hint = "Displays general program information";
-            this.iAbout.Id = 24;
-            this.iAbout.ImageIndex = 8;
-            this.iAbout.LargeImageIndex = 8;
-            this.iAbout.Name = "iAbout";
+            this.btnAbout.Caption = "Giới thiệu";
+            this.btnAbout.Description = "Displays general program information.";
+            this.btnAbout.Hint = "Displays general program information";
+            this.btnAbout.Id = 24;
+            this.btnAbout.ImageIndex = 8;
+            this.btnAbout.LargeImageIndex = 8;
+            this.btnAbout.Name = "btnAbout";
             // 
             // siStatus
             // 
@@ -467,7 +473,7 @@
             // 
             // btnImportKH
             // 
-            this.btnImportKH.Caption = "Nhập từ file";
+            this.btnImportKH.Caption = "Phục hồi dữ liệu KH";
             this.btnImportKH.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
             this.btnImportKH.Glyph = ((System.Drawing.Image)(resources.GetObject("btnImportKH.Glyph")));
             this.btnImportKH.Id = 88;
@@ -483,7 +489,7 @@
             // 
             // btnExportKH
             // 
-            this.btnExportKH.Caption = "Xuất ra file";
+            this.btnExportKH.Caption = "Sao lưu dữ liệu KH";
             this.btnExportKH.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
             this.btnExportKH.Glyph = ((System.Drawing.Image)(resources.GetObject("btnExportKH.Glyph")));
             this.btnExportKH.Id = 90;
@@ -546,14 +552,12 @@
             this.ribbonPageGroup3,
             this.ribbonPageGroup4,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup1,
             this.ribbonPageGroup6,
             this.ribbonPageGroup7,
             this.formatRibbonPageGroup,
             this.skinsRibbonPageGroup});
             this.homeRibbonPage.Name = "homeRibbonPage";
-            this.homeRibbonPage.Text = "Home";
+            this.homeRibbonPage.Text = "Quản lý khách sạn";
             // 
             // exitRibbonPageGroup
             // 
@@ -643,16 +647,19 @@
             // helpRibbonPage
             // 
             this.helpRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup8,
             this.helpRibbonPageGroup});
             this.helpRibbonPage.Name = "helpRibbonPage";
-            this.helpRibbonPage.Text = "Help";
+            this.helpRibbonPage.Text = "Quản lý hệ thống";
             // 
             // helpRibbonPageGroup
             // 
-            this.helpRibbonPageGroup.ItemLinks.Add(this.iHelp);
-            this.helpRibbonPageGroup.ItemLinks.Add(this.iAbout);
+            this.helpRibbonPageGroup.ItemLinks.Add(this.btnHelp);
+            this.helpRibbonPageGroup.ItemLinks.Add(this.btnAbout);
             this.helpRibbonPageGroup.Name = "helpRibbonPageGroup";
-            this.helpRibbonPageGroup.Text = "Help";
+            this.helpRibbonPageGroup.Text = "Trợ giúp";
             // 
             // ribbonStatusBar
             // 
@@ -776,6 +783,29 @@
             this.btnTimHD.Id = 98;
             this.btnTimHD.Name = "btnTimHD";
             // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnBackup);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnImport);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Hệ thống";
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Caption = "Sao lưu CSDL";
+            this.btnBackup.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnBackup.Glyph = ((System.Drawing.Image)(resources.GetObject("btnBackup.Glyph")));
+            this.btnBackup.Id = 100;
+            this.btnBackup.Name = "btnBackup";
+            // 
+            // btnImport
+            // 
+            this.btnImport.Caption = "Phục hồi CSDL";
+            this.btnImport.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnImport.Glyph = ((System.Drawing.Image)(resources.GetObject("btnImport.Glyph")));
+            this.btnImport.Id = 101;
+            this.btnImport.Name = "btnImport";
+            // 
             // main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -822,8 +852,8 @@
         private DevExpress.XtraBars.BarButtonItem iSave;
         private DevExpress.XtraBars.BarButtonItem iSaveAs;
         private DevExpress.XtraBars.BarButtonItem iHome;
-        private DevExpress.XtraBars.BarButtonItem iHelp;
-        private DevExpress.XtraBars.BarButtonItem iAbout;
+        private DevExpress.XtraBars.BarButtonItem btnHelp;
+        private DevExpress.XtraBars.BarButtonItem btnAbout;
         private DevExpress.XtraBars.BarStaticItem siStatus;
         private DevExpress.XtraBars.BarStaticItem siInfo;
         private DevExpress.XtraBars.BarButtonGroup alignButtonGroup;
@@ -883,5 +913,8 @@
         private DevExpress.XtraBars.BarButtonItem btnTimNV;
         private DevExpress.XtraBars.BarButtonItem btnTimTK;
         private DevExpress.XtraBars.BarButtonItem btnTimHD;
+        private DevExpress.XtraBars.BarButtonItem btnBackup;
+        private DevExpress.XtraBars.BarButtonItem btnImport;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
     }
 }
