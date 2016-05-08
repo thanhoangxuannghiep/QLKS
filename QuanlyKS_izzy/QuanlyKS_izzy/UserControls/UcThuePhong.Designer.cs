@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcThuePhong));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup3 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -100,9 +100,9 @@
             this.btnXoaNhapLai = new DevExpress.XtraEditors.SimpleButton();
             this.navBarGroupControlContainer3 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoaDV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSuaDV = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThemDV = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.navBarGroupControlContainer4 = new DevExpress.XtraNavBar.NavBarGroupControlContainer();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
@@ -133,6 +133,8 @@
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridDSDichVu = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -172,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.navBarGroupControlContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -195,6 +198,8 @@
             this.panelControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDSDichVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -258,7 +263,6 @@
             // 
             this.navBarGroup1.Caption = "Thông Tin";
             this.navBarGroup1.ControlContainer = this.navBarGroupControlContainer1;
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupClientHeight = 280;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -828,45 +832,49 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.simpleButton5);
-            this.panelControl2.Controls.Add(this.simpleButton4);
-            this.panelControl2.Controls.Add(this.simpleButton3);
+            this.panelControl2.Controls.Add(this.btnXoaDV);
+            this.panelControl2.Controls.Add(this.btnSuaDV);
+            this.panelControl2.Controls.Add(this.btnThemDV);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 195);
+            this.panelControl2.Location = new System.Drawing.Point(0, 247);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(532, 98);
+            this.panelControl2.Size = new System.Drawing.Size(532, 46);
             this.panelControl2.TabIndex = 0;
             // 
-            // simpleButton5
+            // btnXoaDV
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(395, 28);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(75, 39);
-            this.simpleButton5.TabIndex = 0;
-            this.simpleButton5.Text = "simpleButton3";
+            this.btnXoaDV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDV.Image")));
+            this.btnXoaDV.Location = new System.Drawing.Point(411, 10);
+            this.btnXoaDV.Name = "btnXoaDV";
+            this.btnXoaDV.Size = new System.Drawing.Size(101, 30);
+            this.btnXoaDV.TabIndex = 0;
+            this.btnXoaDV.Text = "Xóa Dịch Vụ";
             // 
-            // simpleButton4
+            // btnSuaDV
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(235, 28);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(75, 39);
-            this.simpleButton4.TabIndex = 0;
-            this.simpleButton4.Text = "simpleButton3";
+            this.btnSuaDV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDV.Image")));
+            this.btnSuaDV.Location = new System.Drawing.Point(218, 10);
+            this.btnSuaDV.Name = "btnSuaDV";
+            this.btnSuaDV.Size = new System.Drawing.Size(101, 30);
+            this.btnSuaDV.TabIndex = 0;
+            this.btnSuaDV.Text = "Sửa Dịch Vụ";
             // 
-            // simpleButton3
+            // btnThemDV
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(83, 28);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 39);
-            this.simpleButton3.TabIndex = 0;
-            this.simpleButton3.Text = "simpleButton3";
+            this.btnThemDV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemDV.Image")));
+            this.btnThemDV.Location = new System.Drawing.Point(18, 10);
+            this.btnThemDV.Name = "btnThemDV";
+            this.btnThemDV.Size = new System.Drawing.Size(92, 30);
+            this.btnThemDV.TabIndex = 0;
+            this.btnThemDV.Text = "Thêm Dịch Vụ";
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.gridDSDichVu);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(532, 195);
+            this.panelControl1.Size = new System.Drawing.Size(532, 247);
             this.panelControl1.TabIndex = 0;
             // 
             // navBarGroupControlContainer4
@@ -963,7 +971,7 @@
             // btnSuaKH
             // 
             this.btnSuaKH.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaKH.Image")));
-            this.btnSuaKH.Location = new System.Drawing.Point(394, 13);
+            this.btnSuaKH.Location = new System.Drawing.Point(231, 13);
             this.btnSuaKH.Name = "btnSuaKH";
             this.btnSuaKH.Size = new System.Drawing.Size(75, 23);
             this.btnSuaKH.TabIndex = 0;
@@ -972,7 +980,7 @@
             // btnXoaKH
             // 
             this.btnXoaKH.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaKH.Image")));
-            this.btnXoaKH.Location = new System.Drawing.Point(218, 13);
+            this.btnXoaKH.Location = new System.Drawing.Point(411, 13);
             this.btnXoaKH.Name = "btnXoaKH";
             this.btnXoaKH.Size = new System.Drawing.Size(75, 23);
             this.btnXoaKH.TabIndex = 0;
@@ -992,7 +1000,6 @@
             // 
             this.navBarGroup2.Caption = "Bill Thanh Toán";
             this.navBarGroup2.ControlContainer = this.navBarGroupControlContainer2;
-            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.GroupClientHeight = 220;
             this.navBarGroup2.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup2.Name = "navBarGroup2";
@@ -1009,7 +1016,6 @@
             // 
             this.navBarGroup4.Caption = "Thông Tin Khách Hàng";
             this.navBarGroup4.ControlContainer = this.navBarGroupControlContainer4;
-            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.GroupClientHeight = 200;
             this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup4.Name = "navBarGroup4";
@@ -1023,13 +1029,13 @@
             // 
             // galleryControlGallery1
             // 
-            galleryItemGroup3.Caption = "Danh Sách Phòng";
-            galleryItem3.Caption = "Item9";
-            galleryItem3.Image = global::QuanlyKS_izzy.Properties.Resources.open;
-            galleryItemGroup3.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem3});
+            galleryItemGroup2.Caption = "Danh Sách Phòng";
+            galleryItem2.Caption = "Item9";
+            galleryItem2.Image = global::QuanlyKS_izzy.Properties.Resources.open;
+            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem2});
             this.galleryControl1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup3});
+            galleryItemGroup2});
             this.galleryControl1.Gallery.HoverImageSize = new System.Drawing.Size(90, 90);
             this.galleryControl1.Gallery.ImageSize = new System.Drawing.Size(70, 70);
             this.galleryControl1.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
@@ -1155,6 +1161,23 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             // 
+            // gridDSDichVu
+            // 
+            this.gridDSDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDSDichVu.Location = new System.Drawing.Point(2, 2);
+            this.gridDSDichVu.MainView = this.gridView1;
+            this.gridDSDichVu.MenuManager = this.barManager1;
+            this.gridDSDichVu.Name = "gridDSDichVu";
+            this.gridDSDichVu.Size = new System.Drawing.Size(528, 243);
+            this.gridDSDichVu.TabIndex = 0;
+            this.gridDSDichVu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridDSDichVu;
+            this.gridView1.Name = "gridView1";
+            // 
             // UcThuePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1211,6 +1234,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.navBarGroupControlContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
@@ -1235,6 +1259,8 @@
             this.panelControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDSDichVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1289,9 +1315,9 @@
         private DevExpress.XtraNavBar.NavBarGroupControlContainer navBarGroupControlContainer3;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnXoaDV;
+        private DevExpress.XtraEditors.SimpleButton btnSuaDV;
+        private DevExpress.XtraEditors.SimpleButton btnThemDV;
         private DevExpress.XtraEditors.SimpleButton btnXoaNhapLai;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.SplitterControl splitterControl1;
@@ -1342,5 +1368,7 @@
         private DevExpress.XtraBars.Ribbon.GalleryControl galleryControlTang;
         private DevExpress.XtraBars.Ribbon.GalleryControlClient galleryControlClient2;
         private DevExpress.XtraEditors.PanelControl panelControl10;
+        private DevExpress.XtraGrid.GridControl gridDSDichVu;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

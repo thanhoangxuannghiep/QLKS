@@ -116,6 +116,12 @@
     <Compile Include="UserControls\UCKhachHang.Designer.cs">
       <DependentUpon>UCKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCLichSuKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCLichSuKH.Designer.cs">
+      <DependentUpon>UCLichSuKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucRent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCKhachHang.resx">
       <DependentUpon>UCKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCLichSuKH.resx">
+      <DependentUpon>UCLichSuKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucRent.resx">
       <DependentUpon>ucRent.cs</DependentUpon>
@@ -233,6 +242,7 @@
     <None Include="Images\employee.png" />
     <None Include="Images\account.png" />
     <None Include="Images\ticket.png" />
+    <None Include="Images\history.png" />
     <Content Include="Resources\close.png" />
     <Content Include="Resources\hotel.png" />
     <Content Include="Resources\info.png" />

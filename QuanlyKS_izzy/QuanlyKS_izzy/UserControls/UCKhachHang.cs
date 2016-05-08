@@ -28,5 +28,13 @@ namespace QuanlyKS_izzy.UserControls
         {
             
         }
+
+        private void btnLichSuKH_Click(object sender, EventArgs e)
+        {
+            Form form = new Form();
+            UCLichSuKH ucLichSuKH = new UCLichSuKH();
+            ucLichSuKH.Show();
+            form.Controls.Add(ucLichSuKH);
+        }
     }
 }
