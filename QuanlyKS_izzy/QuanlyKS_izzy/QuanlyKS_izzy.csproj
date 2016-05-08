@@ -223,6 +223,16 @@
     <None Include="Images\payment.png" />
     <None Include="Images\arrow1.png" />
     <None Include="Images\cancel_Booking_room.png" />
+    <None Include="Images\home.png" />
+    <None Include="Images\room.png" />
+    <None Include="Images\home1.png" />
+    <None Include="Images\room1.png" />
+    <None Include="Images\Customers1.png" />
+    <None Include="Images\bill.png" />
+    <None Include="Images\rule.png" />
+    <None Include="Images\employee.png" />
+    <None Include="Images\account.png" />
+    <None Include="Images\ticket.png" />
     <Content Include="Resources\close.png" />
     <Content Include="Resources\hotel.png" />
     <Content Include="Resources\info.png" />

@@ -70,21 +70,28 @@
             this.btnDSTK = new DevExpress.XtraBars.BarButtonItem();
             this.btnDichvu = new DevExpress.XtraBars.BarButtonItem();
             this.btnBaocao = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTimPT = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTimNV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTimTK = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTimHD = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBackup = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImport = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.exitRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupPhong = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupQLKH = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.formatRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.skinsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -95,13 +102,6 @@
             this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
             this.tabContent = new DevExpress.XtraTab.XtraTabControl();
-            this.btnTimPT = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTimNV = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTimTK = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTimHD = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnBackup = new DevExpress.XtraBars.BarButtonItem();
-            this.btnImport = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
@@ -447,6 +447,7 @@
             this.btnQuyDinh.Id = 84;
             this.btnQuyDinh.LargeGlyph = global::QuanlyKS_izzy.Properties.Resources.rule;
             this.btnQuyDinh.Name = "btnQuyDinh";
+            this.btnQuyDinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuyDinh_ItemClick);
             // 
             // btnPhieuThue
             // 
@@ -455,6 +456,7 @@
             this.btnPhieuThue.Id = 85;
             this.btnPhieuThue.LargeGlyph = global::QuanlyKS_izzy.Properties.Resources.ticket;
             this.btnPhieuThue.Name = "btnPhieuThue";
+            this.btnPhieuThue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuThue_ItemClick);
             // 
             // btnDatPhong
             // 
@@ -519,6 +521,7 @@
             this.btnDichvu.Id = 93;
             this.btnDichvu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDichvu.LargeGlyph")));
             this.btnDichvu.Name = "btnDichvu";
+            this.btnDichvu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDichvu_ItemClick);
             // 
             // btnBaocao
             // 
@@ -528,6 +531,54 @@
             this.btnBaocao.Id = 94;
             this.btnBaocao.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnBaocao.LargeGlyph")));
             this.btnBaocao.Name = "btnBaocao";
+            // 
+            // btnTimPT
+            // 
+            this.btnTimPT.Caption = "Tra cứu phiếu thuê";
+            this.btnTimPT.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnTimPT.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTimPT.Glyph")));
+            this.btnTimPT.Id = 95;
+            this.btnTimPT.Name = "btnTimPT";
+            // 
+            // btnTimNV
+            // 
+            this.btnTimNV.Caption = "Tra cứu nhân viên";
+            this.btnTimNV.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnTimNV.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTimNV.Glyph")));
+            this.btnTimNV.Id = 96;
+            this.btnTimNV.Name = "btnTimNV";
+            // 
+            // btnTimTK
+            // 
+            this.btnTimTK.Caption = "Tra cứu tài khoản";
+            this.btnTimTK.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnTimTK.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTimTK.Glyph")));
+            this.btnTimTK.Id = 97;
+            this.btnTimTK.Name = "btnTimTK";
+            // 
+            // btnTimHD
+            // 
+            this.btnTimHD.Caption = "Tra cứu hóa đơn";
+            this.btnTimHD.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnTimHD.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTimHD.Glyph")));
+            this.btnTimHD.Id = 98;
+            this.btnTimHD.Name = "btnTimHD";
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Caption = "Sao lưu CSDL";
+            this.btnBackup.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnBackup.Glyph = ((System.Drawing.Image)(resources.GetObject("btnBackup.Glyph")));
+            this.btnBackup.Id = 100;
+            this.btnBackup.Name = "btnBackup";
+            // 
+            // btnImport
+            // 
+            this.btnImport.Caption = "Phục hồi CSDL";
+            this.btnImport.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.btnImport.Glyph = ((System.Drawing.Image)(resources.GetObject("btnImport.Glyph")));
+            this.btnImport.Id = 101;
+            this.btnImport.Name = "btnImport";
             // 
             // ribbonImageCollectionLarge
             // 
@@ -583,12 +634,6 @@
             this.ribbonPageGroupQLKH.Name = "ribbonPageGroupQLKH";
             this.ribbonPageGroupQLKH.Text = "Khách Hàng";
             // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnQuyDinh);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Thay Đổi Qui Định";
-            // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnHoaDon);
@@ -609,13 +654,6 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTimNV);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Nhân viên";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnDSTK);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnTimTK);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Tài khoản";
             // 
             // ribbonPageGroup6
             // 
@@ -653,6 +691,26 @@
             this.helpRibbonPageGroup});
             this.helpRibbonPage.Name = "helpRibbonPage";
             this.helpRibbonPage.Text = "Quản lý hệ thống";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnDSTK);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnTimTK);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Tài khoản";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnQuyDinh);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Thay Đổi Qui Định";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnBackup);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnImport);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Hệ thống";
             // 
             // helpRibbonPageGroup
             // 
@@ -750,61 +808,6 @@
             this.tabContent.Name = "tabContent";
             this.tabContent.Size = new System.Drawing.Size(1339, 580);
             this.tabContent.TabIndex = 1;
-            // 
-            // btnTimPT
-            // 
-            this.btnTimPT.Caption = "Tra cứu phiếu thuê";
-            this.btnTimPT.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.btnTimPT.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTimPT.Glyph")));
-            this.btnTimPT.Id = 95;
-            this.btnTimPT.Name = "btnTimPT";
-            // 
-            // btnTimNV
-            // 
-            this.btnTimNV.Caption = "Tra cứu nhân viên";
-            this.btnTimNV.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.btnTimNV.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTimNV.Glyph")));
-            this.btnTimNV.Id = 96;
-            this.btnTimNV.Name = "btnTimNV";
-            // 
-            // btnTimTK
-            // 
-            this.btnTimTK.Caption = "Tra cứu tài khoản";
-            this.btnTimTK.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.btnTimTK.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTimTK.Glyph")));
-            this.btnTimTK.Id = 97;
-            this.btnTimTK.Name = "btnTimTK";
-            // 
-            // btnTimHD
-            // 
-            this.btnTimHD.Caption = "Tra cứu hóa đơn";
-            this.btnTimHD.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.btnTimHD.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTimHD.Glyph")));
-            this.btnTimHD.Id = 98;
-            this.btnTimHD.Name = "btnTimHD";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnBackup);
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnImport);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "Hệ thống";
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.Caption = "Sao lưu CSDL";
-            this.btnBackup.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.btnBackup.Glyph = ((System.Drawing.Image)(resources.GetObject("btnBackup.Glyph")));
-            this.btnBackup.Id = 100;
-            this.btnBackup.Name = "btnBackup";
-            // 
-            // btnImport
-            // 
-            this.btnImport.Caption = "Phục hồi CSDL";
-            this.btnImport.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.btnImport.Glyph = ((System.Drawing.Image)(resources.GetObject("btnImport.Glyph")));
-            this.btnImport.Id = 101;
-            this.btnImport.Name = "btnImport";
             // 
             // main
             // 

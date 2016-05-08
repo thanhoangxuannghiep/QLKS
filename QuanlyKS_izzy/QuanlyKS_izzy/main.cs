@@ -96,13 +96,15 @@ namespace QuanlyKS_izzy
             ucBill.Dock = DockStyle.Fill;
             tabContent.Controls.Add(ucBill);
         }
-        //private void btnThayDoiQuiDinh_ItemClick(object sender, ItemClickEventArgs e)
-        //{
-        //    UserControls.UcThayDoiQuiDinh ucThayDoiQuiDinh = new UserControls.UcThayDoiQuiDinh();
-        //    tabContent.Controls.Clear();
-        //    ucThayDoiQuiDinh.Dock = DockStyle.Fill;
-        //    tabContent.Controls.Add(ucThayDoiQuiDinh);
-        //}
+
+        private void btnQuyDinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.UcThayDoiQuiDinh ucThayDoiQuiDinh = new UserControls.UcThayDoiQuiDinh();
+            tabContent.Controls.Clear();
+            ucThayDoiQuiDinh.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(ucThayDoiQuiDinh);
+
+        }
 
         //private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         //{
@@ -126,6 +128,22 @@ namespace QuanlyKS_izzy
             tabContent.Controls.Clear();
             mainForm.Dock = DockStyle.Fill;
             tabContent.Controls.Add(mainForm);
+        }
+
+        private void btnPhieuThue_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.ucRent ucRent = new UserControls.ucRent();
+            tabContent.Controls.Clear();
+            ucRent.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(ucRent);
+        }
+
+        private void btnDichvu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.ucServices ucService = new UserControls.ucServices();
+            tabContent.Controls.Clear();
+            ucService.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(ucService);
         }
 
         

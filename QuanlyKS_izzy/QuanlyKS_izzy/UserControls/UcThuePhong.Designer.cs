@@ -30,10 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcThuePhong));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem1 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem2 = new DevExpress.XtraBars.Ribbon.GalleryItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup3 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem3 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -296,9 +293,10 @@
             // 
             // btnPhieuThuePhong
             // 
-            this.btnPhieuThuePhong.Location = new System.Drawing.Point(403, 247);
+            this.btnPhieuThuePhong.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuThuePhong.Image")));
+            this.btnPhieuThuePhong.Location = new System.Drawing.Point(388, 247);
             this.btnPhieuThuePhong.Name = "btnPhieuThuePhong";
-            this.btnPhieuThuePhong.Size = new System.Drawing.Size(109, 23);
+            this.btnPhieuThuePhong.Size = new System.Drawing.Size(127, 23);
             this.btnPhieuThuePhong.TabIndex = 7;
             this.btnPhieuThuePhong.Text = "In Phiếu Thuê Phòng";
             this.btnPhieuThuePhong.Click += new System.EventHandler(this.btnPhieuThuePhong_Click);
@@ -571,26 +569,29 @@
             // 
             // btnThayDoiThongTin
             // 
-            this.btnThayDoiThongTin.Location = new System.Drawing.Point(261, 247);
+            this.btnThayDoiThongTin.Image = ((System.Drawing.Image)(resources.GetObject("btnThayDoiThongTin.Image")));
+            this.btnThayDoiThongTin.Location = new System.Drawing.Point(250, 247);
             this.btnThayDoiThongTin.Name = "btnThayDoiThongTin";
-            this.btnThayDoiThongTin.Size = new System.Drawing.Size(109, 23);
+            this.btnThayDoiThongTin.Size = new System.Drawing.Size(120, 23);
             this.btnThayDoiThongTin.TabIndex = 6;
             this.btnThayDoiThongTin.Text = "Thay Đổi Thông Tin";
             // 
             // btnDatPhong
             // 
+            this.btnDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnDatPhong.Image")));
             this.btnDatPhong.Location = new System.Drawing.Point(15, 247);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(86, 23);
+            this.btnDatPhong.Size = new System.Drawing.Size(81, 23);
             this.btnDatPhong.TabIndex = 4;
             this.btnDatPhong.Text = "Đặt Phòng";
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // btnChuyenPhong
             // 
-            this.btnChuyenPhong.Location = new System.Drawing.Point(133, 247);
+            this.btnChuyenPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenPhong.Image")));
+            this.btnChuyenPhong.Location = new System.Drawing.Point(129, 247);
             this.btnChuyenPhong.Name = "btnChuyenPhong";
-            this.btnChuyenPhong.Size = new System.Drawing.Size(86, 23);
+            this.btnChuyenPhong.Size = new System.Drawing.Size(101, 23);
             this.btnChuyenPhong.TabIndex = 5;
             this.btnChuyenPhong.Text = "Chuyển Phòng";
             this.btnChuyenPhong.Click += new System.EventHandler(this.btnChuyenPhong_Click);
@@ -961,6 +962,7 @@
             // 
             // btnSuaKH
             // 
+            this.btnSuaKH.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaKH.Image")));
             this.btnSuaKH.Location = new System.Drawing.Point(394, 13);
             this.btnSuaKH.Name = "btnSuaKH";
             this.btnSuaKH.Size = new System.Drawing.Size(75, 23);
@@ -969,6 +971,7 @@
             // 
             // btnXoaKH
             // 
+            this.btnXoaKH.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaKH.Image")));
             this.btnXoaKH.Location = new System.Drawing.Point(218, 13);
             this.btnXoaKH.Name = "btnXoaKH";
             this.btnXoaKH.Size = new System.Drawing.Size(75, 23);
@@ -977,6 +980,7 @@
             // 
             // btnThemKH
             // 
+            this.btnThemKH.Image = ((System.Drawing.Image)(resources.GetObject("btnThemKH.Image")));
             this.btnThemKH.Location = new System.Drawing.Point(51, 13);
             this.btnThemKH.Name = "btnThemKH";
             this.btnThemKH.Size = new System.Drawing.Size(75, 23);
@@ -1005,6 +1009,7 @@
             // 
             this.navBarGroup4.Caption = "Thông Tin Khách Hàng";
             this.navBarGroup4.ControlContainer = this.navBarGroupControlContainer4;
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.GroupClientHeight = 200;
             this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer;
             this.navBarGroup4.Name = "navBarGroup4";
@@ -1018,13 +1023,13 @@
             // 
             // galleryControlGallery1
             // 
-            galleryItemGroup1.Caption = "Danh Sách Phòng";
-            galleryItem1.Caption = "Item9";
-            galleryItem1.Image = global::QuanlyKS_izzy.Properties.Resources.open;
-            galleryItemGroup1.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem1});
+            galleryItemGroup3.Caption = "Danh Sách Phòng";
+            galleryItem3.Caption = "Item9";
+            galleryItem3.Image = global::QuanlyKS_izzy.Properties.Resources.open;
+            galleryItemGroup3.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem3});
             this.galleryControl1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup1});
+            galleryItemGroup3});
             this.galleryControl1.Gallery.HoverImageSize = new System.Drawing.Size(90, 90);
             this.galleryControl1.Gallery.ImageSize = new System.Drawing.Size(70, 70);
             this.galleryControl1.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
@@ -1081,18 +1086,6 @@
             // 
             // galleryControlGallery2
             // 
-            galleryItemGroup2.Caption = "Tầng";
-            galleryItem2.Caption = "Tầng 1";
-            galleryItem2.Description = "Tầng 1";
-            galleryItem2.Image = global::QuanlyKS_izzy.Properties.Resources.hotel;
-            galleryItem3.Caption = "Tầng 2";
-            galleryItem3.Description = "Tầng 2";
-            galleryItem3.Image = global::QuanlyKS_izzy.Properties.Resources.hotel;
-            galleryItemGroup2.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem2,
-            galleryItem3});
-            this.galleryControlTang.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup2});
             this.galleryControlTang.Gallery.ImageSize = new System.Drawing.Size(128, 128);
             this.galleryControlTang.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
             this.galleryControlTang.Gallery.ShowItemText = true;
