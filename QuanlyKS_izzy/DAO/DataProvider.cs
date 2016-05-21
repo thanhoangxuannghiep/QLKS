@@ -22,18 +22,30 @@ namespace DAO
         protected void disConnect(){
             cnn.Close();
         }
-        protected void ExecuteNonQuery(string sqlStatement){
-            cmd = new SqlCommand(sqlStatement);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
+        public bool ExecuteNonQuery(string sqlStatement){
+            try
+            {
+                Connect();
+                cmd = new SqlCommand(sqlStatement);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                disConnect();
+                return true;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
-        protected void ExecuteUpdateQuery(string sqlStatement){
-            Connect();
+        public void ExecuteUpdateQuery(string sqlStatement)
+        {
             ExecuteNonQuery(sqlStatement);
-            disConnect();
         }
         public DataSet ExecuteQuery(string sqlStatement)
         {
+            Connect();
+
             DataSet dataset = new DataSet();
             cmd = new SqlCommand();
             cmd.Connection = this.cnn;
@@ -43,6 +55,8 @@ namespace DAO
             }catch (SqlException ex){ 
                 System.Windows.Forms.MessageBox.Show(ex.ToString());
             }
+
+            disConnect();
             return dataset;
         }
         public DataTable ExecuteQuery_DataTble(string sqlStatement)
