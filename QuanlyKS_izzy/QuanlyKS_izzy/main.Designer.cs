@@ -504,7 +504,6 @@
             this.btnDSNV.Id = 91;
             this.btnDSNV.LargeGlyph = global::QuanlyKS_izzy.Properties.Resources.employee;
             this.btnDSNV.Name = "btnDSNV";
-            this.btnDSNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSNV_ItemClick);
             // 
             // btnDSTK
             // 
