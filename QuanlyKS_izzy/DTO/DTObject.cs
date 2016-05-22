@@ -39,5 +39,19 @@ namespace DTO
                 throw;
             }
         }
+
+        public static bool delete(int MaKH)
+        {
+            try
+            {
+                DataProvider provider = new DataProvider();
+                string sql = "DELETE FROM KHACHHANG WHERE MaKH = " + MaKH;
+                return provider.ExecuteNonQuery(sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
