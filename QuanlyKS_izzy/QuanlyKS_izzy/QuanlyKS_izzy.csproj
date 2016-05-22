@@ -122,6 +122,12 @@
     <Compile Include="UserControls\UCLichSuKH.Designer.cs">
       <DependentUpon>UCLichSuKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucNhanVien.Designer.cs">
+      <DependentUpon>ucNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucRent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCLichSuKH.resx">
       <DependentUpon>UCLichSuKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucNhanVien.resx">
+      <DependentUpon>ucNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucRent.resx">
       <DependentUpon>ucRent.cs</DependentUpon>
