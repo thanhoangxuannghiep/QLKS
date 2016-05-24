@@ -28,9 +28,9 @@ namespace BUS
         {
             return KhachHang.update(name_table, array_columns, MaKH, TenKH, GioiTinh, SoCMND, LoaiKHID, SoDienThoai, Email, DiemThuong);
         }
-        public static bool delete(int MaKH)
-        {
-            return KhachHang.delete(MaKH);
-        }
+        //public static bool delete(int MaKH)
+        //{
+        //    return KhachHang.delete(MaKH);
+        //}
     }
 }

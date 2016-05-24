@@ -31,7 +31,7 @@ namespace DTO
             {
                 DataProvider provider = new DataProvider();
                 string sql = "insert into " + name_table + "(" + String.Join(",", array_columns) + ") OUTPUT INSERTED.MaKH values(N'" + TenKH + "', " + GioiTinh + ", '" + SoCMND + "', " + LoaiKHID + ", '" + SoDienThoai + "', '" + Email + "', " + DiemThuong + ")";
-                return provider.ExecuteInsertQuery(sql);
+                return 1;//provider.ExecuteInsertQuery(sql);
             }
             catch (Exception)
             {

@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucNhanVien));
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.dateNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.dateNgayVaoLam = new System.Windows.Forms.DateTimePicker();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
@@ -39,8 +41,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboLoaiNV = new System.Windows.Forms.ComboBox();
-            this.txtNgayVaoLam = new DevExpress.XtraEditors.TextEdit();
-            this.txtNgaySinh = new DevExpress.XtraEditors.TextEdit();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoCMND = new DevExpress.XtraEditors.TextEdit();
@@ -72,8 +72,6 @@
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVaoLam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhanVien)).BeginInit();
@@ -97,6 +95,8 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.dateNgaySinh);
+            this.groupControl2.Controls.Add(this.dateNgayVaoLam);
             this.groupControl2.Controls.Add(this.cboTrangThai);
             this.groupControl2.Controls.Add(this.label7);
             this.groupControl2.Controls.Add(this.cboGioiTinh);
@@ -105,8 +105,6 @@
             this.groupControl2.Controls.Add(this.label5);
             this.groupControl2.Controls.Add(this.label4);
             this.groupControl2.Controls.Add(this.cboLoaiNV);
-            this.groupControl2.Controls.Add(this.txtNgayVaoLam);
-            this.groupControl2.Controls.Add(this.txtNgaySinh);
             this.groupControl2.Controls.Add(this.txtTenNV);
             this.groupControl2.Controls.Add(this.label6);
             this.groupControl2.Controls.Add(this.txtSoCMND);
@@ -119,6 +117,22 @@
             this.groupControl2.Size = new System.Drawing.Size(271, 516);
             this.groupControl2.TabIndex = 3;
             this.groupControl2.Text = "Thông Tin Nhân Viên";
+            // 
+            // dateNgaySinh
+            // 
+            this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNgaySinh.Location = new System.Drawing.Point(126, 111);
+            this.dateNgaySinh.Name = "dateNgaySinh";
+            this.dateNgaySinh.Size = new System.Drawing.Size(129, 20);
+            this.dateNgaySinh.TabIndex = 12;
+            // 
+            // dateNgayVaoLam
+            // 
+            this.dateNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNgayVaoLam.Location = new System.Drawing.Point(126, 211);
+            this.dateNgayVaoLam.Name = "dateNgayVaoLam";
+            this.dateNgayVaoLam.Size = new System.Drawing.Size(129, 20);
+            this.dateNgayVaoLam.TabIndex = 11;
             // 
             // cboTrangThai
             // 
@@ -159,6 +173,7 @@
             this.btnThem.Size = new System.Drawing.Size(68, 41);
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnCapNhat
             // 
@@ -181,7 +196,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 179);
+            this.label4.Location = new System.Drawing.Point(47, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 4;
@@ -195,21 +210,6 @@
             this.cboLoaiNV.Size = new System.Drawing.Size(129, 21);
             this.cboLoaiNV.TabIndex = 2;
             // 
-            // txtNgayVaoLam
-            // 
-            this.txtNgayVaoLam.Location = new System.Drawing.Point(126, 213);
-            this.txtNgayVaoLam.Name = "txtNgayVaoLam";
-            this.txtNgayVaoLam.Size = new System.Drawing.Size(129, 20);
-            this.txtNgayVaoLam.TabIndex = 1;
-            this.txtNgayVaoLam.Visible = false;
-            // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.Location = new System.Drawing.Point(125, 111);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(129, 20);
-            this.txtNgaySinh.TabIndex = 1;
-            // 
             // txtTenNV
             // 
             this.txtTenNV.Location = new System.Drawing.Point(125, 43);
@@ -220,7 +220,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 216);
+            this.label6.Location = new System.Drawing.Point(21, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 0;
@@ -346,7 +346,7 @@
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Loại Nhân Viên";
-            this.gridColumn12.FieldName = "LoaiNhanVien";
+            this.gridColumn12.FieldName = "LOAINHANVIEN.TenLoaiNhanVien";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 6;
@@ -462,8 +462,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVaoLam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhanVien)).EndInit();
@@ -488,8 +486,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboLoaiNV;
-        private DevExpress.XtraEditors.TextEdit txtNgayVaoLam;
-        private DevExpress.XtraEditors.TextEdit txtNgaySinh;
         private DevExpress.XtraEditors.TextEdit txtTenNV;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.TextEdit txtSoCMND;
@@ -519,5 +515,7 @@
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private System.Windows.Forms.DateTimePicker dateNgaySinh;
+        private System.Windows.Forms.DateTimePicker dateNgayVaoLam;
     }
 }
