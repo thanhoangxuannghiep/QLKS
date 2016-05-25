@@ -48,8 +48,8 @@ namespace DTO
                 string _values = "";
                 for (int i = 0; i < array_values.Length; i++)
                 {
-                    string temp = array_values[i].Split('/');
-                    if (temp.Count() == 3)
+                    string[] temp = array_values[i].Split('/');
+                    if (temp.Length == 3)
                     {
                         _values += "convert(date, '";
                         _values += array_values[i];
