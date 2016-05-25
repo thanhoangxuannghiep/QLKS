@@ -146,6 +146,14 @@ namespace QuanlyKS_izzy
             tabContent.Controls.Add(ucService);
         }
 
+        private void btnDSNV_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.ucNhanVien ucNhanVien = new UserControls.ucNhanVien();
+            tabContent.Controls.Clear();
+            ucNhanVien.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(ucNhanVien);
+        }
+
         
 
         

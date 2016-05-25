@@ -5,15 +5,20 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Configuration;
+
 
 namespace DAO
 {
     public class DataProvider
     {
-        public string strConnection = "Server = .\\SQLEXPRESS;Integrated Security = True;Database = quanlykhachsan";
+        public string strConnection = "Server = localhost;Integrated Security = True;Database = quanlykhachsan";
+        //public string strConnection = ConfigurationManager.ConnectionStrings["AppDatabase"].ConnectionString;
         protected SqlConnection cnn;
         protected SqlCommand cmd;
         protected SqlDataAdapter da;
+
+        
 
         public void Connect(){
             cnn = new SqlConnection(@strConnection);
@@ -26,39 +31,19 @@ namespace DAO
             try
             {
                 Connect();
-                cmd = new SqlCommand(sqlStatement);
-                cmd.Connection = this.cnn;
+                cmd = new SqlCommand(@sqlStatement,cnn);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 disConnect();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
-                throw;
+
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                return false;
             }
         }
-
-        public int ExecuteInsertQuery(string sqlStatement)
-        {
-            try
-            {
-                Connect();
-                cmd = new SqlCommand(sqlStatement);
-                cmd.Connection = this.cnn;
-                cmd.CommandType = CommandType.Text;
-                int id = (int)cmd.ExecuteScalar();
-                disConnect();
-                return id;
-            }
-            catch (Exception)
-            {
-                return -1;
-                throw;
-            }
-        }
-
         public void ExecuteUpdateQuery(string sqlStatement)
         {
             ExecuteNonQuery(sqlStatement);
@@ -82,7 +67,23 @@ namespace DAO
         }
         public DataTable ExecuteQuery_DataTble(string sqlStatement)
         {
-            return ExecuteQuery(sqlStatement).Tables[0]; 
+            Connect();
+
+            DataTable dt = new DataTable();
+            cmd = new SqlCommand();
+            cmd.Connection = this.cnn;
+            da = new SqlDataAdapter(sqlStatement, cnn);
+            try
+            {
+                da.Fill(dt);
+            }
+            catch (SqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+            }
+
+            disConnect();
+            return dt;
         }
     }
 }

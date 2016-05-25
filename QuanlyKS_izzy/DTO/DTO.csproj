@@ -40,9 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTObject.cs" />
+    <Compile Include="DTPhuongPH.cs" />
     <Compile Include="KhachHang.cs" />
     <Compile Include="Phong.cs" />
+    <Compile Include="NhanVienDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

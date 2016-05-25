@@ -18,20 +18,28 @@ namespace DTO
                 DataProvider provider = new DataProvider();
                 string sql = "select * from " + name_table;
                 data = provider.ExecuteQuery_DataTble(sql);
+                return data;
             }
             catch (Exception)
             {
-                data = new DataTable();
                 throw;
             }
-            return data;
         }
         public static bool insert(string name_table, string[] array_columns, string[] array_values)
         {
             try
             {
                 DataProvider provider = new DataProvider();
-                string sql = "insert into " + name_table + "(" + String.Join(",", array_columns) + ") values(" + String.Join(",", array_values) + ")";
+                string _values = "";
+                for (int i = 0; i < array_values.Length; i++)
+                {
+                    _values += "N'";
+                    _values += array_values[i];
+                    _values += "'";
+                    if (i < array_values.Length -1)
+                        _values += ",";
+                }
+                string sql = "INSERT INTO " + name_table + "(" + String.Join(",", array_columns) + ") VALUES(" + _values + ")";
                 return provider.ExecuteNonQuery(sql);
             }
             catch (Exception)
@@ -40,13 +48,29 @@ namespace DTO
             }
         }
 
-        public static bool delete(int MaKH)
+        public static bool update(string _table, string _set, string _where)
+        {
+
+            try
+            {
+                DataProvider provider = new DataProvider();
+
+                string sql = "UPDATE "+ _table +" SET " + _set + " WHERE " + _where;
+                return provider.ExecuteNonQuery(sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static DataTable exec(string query)
         {
             try
             {
                 DataProvider provider = new DataProvider();
-                string sql = "DELETE FROM KHACHHANG WHERE MaKH = " + MaKH;
-                return provider.ExecuteNonQuery(sql);
+
+                return provider.ExecuteQuery_DataTble(query);
             }
             catch (Exception)
             {

@@ -156,7 +156,7 @@ namespace QuanlyKS_izzy.UserControls
 
             if (maKH != -1)
             {
-                if (QLKhachHang.delete(maKH))
+                if (/*QLKhachHang.delete(maKH)*/true)
                 {
                     MessageBox.Show("Xóa thành công!");
                     dttb.Rows.Remove(dttb.Rows.Find(maKH));

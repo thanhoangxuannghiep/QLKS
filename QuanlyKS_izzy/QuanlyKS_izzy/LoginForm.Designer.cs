@@ -30,13 +30,13 @@
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -76,6 +76,29 @@
             this.panelControl1.Size = new System.Drawing.Size(555, 466);
             this.panelControl1.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(95)))), ((int)(((byte)(89)))));
+            this.button1.Font = new System.Drawing.Font("Tahoma", 18.25F);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.button1.Location = new System.Drawing.Point(62, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(442, 47);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Đăng nhập";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(65, 230);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Ghi nhớ đăng nhập";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // panelControl3
             // 
             this.panelControl3.Appearance.BackColor = System.Drawing.SystemColors.Window;
@@ -104,6 +127,7 @@
             this.textBox2.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.textBox2.Location = new System.Drawing.Point(125, 175);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.ShortcutsEnabled = false;
             this.textBox2.Size = new System.Drawing.Size(379, 39);
             this.textBox2.TabIndex = 2;
@@ -121,35 +145,45 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("VNI-Redrock", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+//<<<<<<< HEAD
+//            this.labelControl2.Appearance.Font = new System.Drawing.Font("VNI-Redrock", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+//            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+//            this.labelControl2.Location = new System.Drawing.Point(62, 20);
+//            this.labelControl2.Name = "labelControl2";
+//            this.labelControl2.Size = new System.Drawing.Size(105, 43);
+//            this.labelControl2.TabIndex = 0;
+//            this.labelControl2.Text = "Ñaêng nhaäp";
+//            // 
+//            // checkBox1
+//            // 
+//            this.checkBox1.AutoSize = true;
+//            this.checkBox1.Location = new System.Drawing.Point(65, 230);
+//            this.checkBox1.Name = "checkBox1";
+//            this.checkBox1.Size = new System.Drawing.Size(116, 17);
+//            this.checkBox1.TabIndex = 5;
+//            this.checkBox1.Text = "Ghi nhớ đăng nhập";
+//            this.checkBox1.UseVisualStyleBackColor = true;
+//            // 
+//            // button1
+//            // 
+//            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(95)))), ((int)(((byte)(89)))));
+//            this.button1.Font = new System.Drawing.Font("Tahoma", 18.25F);
+//            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+//            this.button1.Location = new System.Drawing.Point(62, 281);
+//            this.button1.Name = "button1";
+//            this.button1.Size = new System.Drawing.Size(442, 47);
+//            this.button1.TabIndex = 6;
+//            this.button1.Text = "Đăng nhập";
+//            this.button1.UseVisualStyleBackColor = false;
+//=======
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.labelControl2.Location = new System.Drawing.Point(62, 20);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(105, 43);
+            this.labelControl2.Size = new System.Drawing.Size(167, 37);
             this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Ñaêng nhaäp";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(65, 230);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Ghi nhớ đăng nhập";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(95)))), ((int)(((byte)(89)))));
-            this.button1.Font = new System.Drawing.Font("Tahoma", 18.25F);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.button1.Location = new System.Drawing.Point(62, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(442, 47);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Đăng nhập";
-            this.button1.UseVisualStyleBackColor = false;
+            this.labelControl2.Text = "Đăng nhập";
+//>>>>>>> origin/phuongph
             // 
             // LoginForm
             // 
