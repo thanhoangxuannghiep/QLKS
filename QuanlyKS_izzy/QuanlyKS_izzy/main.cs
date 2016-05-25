@@ -14,8 +14,8 @@ using DevExpress.LookAndFeel;
 using DevExpress.UserSkins;
 using DevExpress.XtraTab;
 using DevExpress.XtraEditors;
-
-
+using Microsoft.SqlServer;
+using DTO;
 namespace QuanlyKS_izzy
 {
     public partial class main : RibbonForm
@@ -152,6 +152,27 @@ namespace QuanlyKS_izzy
             tabContent.Controls.Clear();
             ucNhanVien.Dock = DockStyle.Fill;
             tabContent.Controls.Add(ucNhanVien);
+        }
+
+        private void btnBackup_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string backup = "Backup";
+            bool exists = System.IO.Directory.Exists(backup);
+
+            if (!exists)
+                System.IO.Directory.CreateDirectory(backup);
+
+            string fullpath = "quanlykhachsan-" + System.DateTime.Now.Date.ToString("dd-MM-yyyy") + ".bak";
+
+            DBManager.exportDB(fullpath);
+
+
+        }
+
+        private void btnImport_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmRestore restore = new frmRestore();
+            restore.Show();
         }
 
         

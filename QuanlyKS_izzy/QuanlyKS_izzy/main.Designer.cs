@@ -572,6 +572,7 @@
             this.btnBackup.Glyph = ((System.Drawing.Image)(resources.GetObject("btnBackup.Glyph")));
             this.btnBackup.Id = 100;
             this.btnBackup.Name = "btnBackup";
+            this.btnBackup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBackup_ItemClick);
             // 
             // btnImport
             // 
@@ -580,6 +581,7 @@
             this.btnImport.Glyph = ((System.Drawing.Image)(resources.GetObject("btnImport.Glyph")));
             this.btnImport.Id = 101;
             this.btnImport.Name = "btnImport";
+            this.btnImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImport_ItemClick);
             // 
             // ribbonImageCollectionLarge
             // 

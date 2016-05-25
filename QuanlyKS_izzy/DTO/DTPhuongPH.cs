@@ -273,4 +273,22 @@ namespace DTO
 
         }
     }
+
+    public class DBManager : DTObject
+    {
+        public static void exportDB(string path)
+        {
+            string sql = "Backup database quanlykhachsan to disk='" + path + "'";
+           
+            DataProvider provider = new DataProvider();
+            provider.ExecuteNonQuery(sql);
+        }
+
+        public static void importDB(string path)
+        {
+            string sql = "RESTORE DATABASE AdventureWorks FROM DISK = '" + path + "' WITH REPLACE";
+            DataProvider provider = new DataProvider();
+            provider.ExecuteNonQuery(sql);
+        }
+    }
 }

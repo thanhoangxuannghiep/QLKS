@@ -6,15 +6,16 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
 using System.Configuration;
+using System.Windows.Forms;
 
 
 namespace DAO
 {
     public class DataProvider
     {
-        public string strConnection = "Server = .\\SQLEXPRESS;Integrated Security = True;Database = quanlykhachsan";
+        //public string strConnection = "Server = .\\SQLEXPRESS;Integrated Security = True;Database = quanlykhachsan";
         //public string strConnection = "Server = localhost;Integrated Security = True;Database = quanlykhachsan";
-        //public string strConnection = ConfigurationManager.ConnectionStrings["AppDatabase"].ConnectionString;
+        public string strConnection = ConfigurationManager.ConnectionStrings["CString"].ConnectionString;
         protected SqlConnection cnn;
         protected SqlCommand cmd;
         protected SqlDataAdapter da;
@@ -22,6 +23,7 @@ namespace DAO
         
 
         public void Connect(){
+            //MessageBox.Show(@strConnection);
             cnn = new SqlConnection(@strConnection);
             cnn.Open();
         }
