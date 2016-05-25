@@ -61,7 +61,7 @@ namespace QuanlyKS_izzy.UserControls
                 }
                 string[] column_name = { "TenKH", "GioiTinh", "SoCMND", "LoaiKHID", "SoDienThoai", "Email", "DiemThuong" };
 
-                int id = QLKhachHang.insert("KHACHHANG", column_name, txtTenKH.Text, (cboGioiTinh.SelectedItem == "Nam" ? 1 : 0), txtSoCMT.Text, (cboLoaiKH.SelectedItem == "Nội Địa" ? 1 : 0), txtSoDT.Text, txtEmail.Text, diemThuong);
+                int id = QLKhachHang.insert("KHACHHANG", column_name, txtTenKH.Text, (cboGioiTinh.SelectedItem == "Nam" ? 1 : 0), txtSoCMT.Text, (cboLoaiKH.SelectedItem == "Nội Địa" ? 1 : 2), txtSoDT.Text, txtEmail.Text, diemThuong);
                 if (id != -1)
                 {
                     DataRow dr = dttb.NewRow();

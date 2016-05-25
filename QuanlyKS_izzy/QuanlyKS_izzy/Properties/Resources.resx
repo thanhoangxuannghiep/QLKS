@@ -196,4 +196,7 @@
   <data name="ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\ticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="checkInRom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

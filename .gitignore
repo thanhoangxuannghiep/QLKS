@@ -49,3 +49,6 @@ Temporary Items
 # add bin/Debug
 */**/bin/Debug
 */**/obj/Debug
+
+# remove file temp git
+*.orig

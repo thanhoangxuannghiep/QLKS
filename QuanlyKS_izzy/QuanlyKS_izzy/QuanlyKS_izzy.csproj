@@ -243,6 +243,7 @@
     <None Include="Images\account.png" />
     <None Include="Images\ticket.png" />
     <None Include="Images\history.png" />
+    <None Include="Resources\check_in.png" />
     <Content Include="Resources\close.png" />
     <Content Include="Resources\hotel.png" />
     <Content Include="Resources\info.png" />

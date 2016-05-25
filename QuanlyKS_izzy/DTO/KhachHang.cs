@@ -15,7 +15,7 @@ namespace DTO
             try
             {
                 DataProvider provider = new DataProvider();
-                string sql = "select MaKH, TenKH, (CASE GioiTinh WHEN 1 THEN N'Nam' WHEN 0 THEN N'Nữ' END) AS GioiTinh, SoCMND, (CASE LoaiKHID WHEN 1 THEN N'Nội Địa' WHEN 0 THEN N'Quốc Tế' END) AS LoaiKHID, SoDienThoai, Email, DiemThuong from " + name_table;
+                string sql = "select MaKH, TenKH, (CASE GioiTinh WHEN 1 THEN N'Nam' WHEN 0 THEN N'Nữ' END) AS GioiTinh, SoCMND, (CASE LoaiKHID WHEN 1 THEN N'Nội Địa' WHEN 2 THEN N'Quốc Tế' END) AS LoaiKHID, SoDienThoai, Email, DiemThuong from " + name_table;
                 data = provider.ExecuteQuery_DataTble(sql);
             }
             catch (Exception)

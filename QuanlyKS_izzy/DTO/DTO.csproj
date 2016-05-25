@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="DTObject.cs" />
     <Compile Include="KhachHang.cs" />
+    <Compile Include="Phong.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
