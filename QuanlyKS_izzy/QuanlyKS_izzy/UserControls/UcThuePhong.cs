@@ -118,7 +118,46 @@ namespace QuanlyKS_izzy.UserControls
             string[] column_name = { "TenKH", "GioiTinh", "SoCMND", "LoaiKHID", "SoDienThoai", "Email", "DiemThuong" };
             QLKhachHang.insert("KHACHHANG", column_name, txtKhachHang.Text, (cboGioiTinh.SelectedItem == "Nam" ? 1 : 0), txtSoCMT.Text, (cboLoaiKH.SelectedItem == "Nội Địa" ? 1 : 2), txtSoDT.Text, null, 0);
 
+            RentAdd();
+        }
 
+        private bool RentAdd()
+        {
+            //string[] value = { "Phiếu Thuê Phòng " + txtSoPhong, cbRentStatus.SelectedText.ToString(), txtSoPhong.Tag, "now()", dtNgayTra.Text, dateEnd.EditValue.ToString(), lookUpCustomer.EditValue.ToString() };
+            //if (procUCRent.create(value) == -1)
+            //{
+            //    MessageBox.Show("Thêm phiếu thuê thành công !", "Thông báo");
+            //    gridCRent.DataSource = null;
+            //    gridCRent.DataSource = procUCRent.getAll();
+            //}
+            //else
+            //{
+            //    switch (procUCRent.create(value))
+            //    {
+            //        case 0:
+            //            MessageBox.Show(labelControl6.Text + " không được phép bỏ trống !", "Lỗi");
+            //            break;
+            //        case 1:
+            //            MessageBox.Show(labelControl7.Text + " không được phép bỏ trống !", "Lỗi");
+            //            break;
+            //        case 2:
+            //            MessageBox.Show(labelControl8.Text + " không được phép bỏ trống !", "Lỗi");
+            //            break;
+            //        case 3:
+            //            MessageBox.Show(labelControl1.Text + " không được phép bỏ trống !", "Lỗi");
+            //            break;
+            //        case 4:
+            //            MessageBox.Show(labelControl2.Text + " không được phép bỏ trống !", "Lỗi");
+            //            break;
+            //        case 5:
+            //            MessageBox.Show(labelControl5.Text + " không được phép bỏ trống !", "Lỗi");
+            //            break;
+            //        case 6:
+            //            MessageBox.Show(labelControl9.Text + " không được phép bỏ trống !", "Lỗi");
+            //            break;
+            //    }
+            //}
+            return true;
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
