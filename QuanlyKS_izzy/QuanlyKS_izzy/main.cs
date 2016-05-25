@@ -180,6 +180,13 @@ namespace QuanlyKS_izzy
         {
             //frmRestore restore = new frmRestore();
             //restore.Show();
+	}
+        private void btnDSTK_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UserControls.ucTaiKhoan ucTaiKhoan = new UserControls.ucTaiKhoan();
+            tabContent.Controls.Clear();
+            ucTaiKhoan.Dock = DockStyle.Fill;
+            tabContent.Controls.Add(ucTaiKhoan);
         }
 
         

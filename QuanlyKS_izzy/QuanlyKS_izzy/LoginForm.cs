@@ -24,7 +24,8 @@ namespace QuanlyKS_izzy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (procLogin.Login(textBox1.Text, textBox2.Text) > 0)
+            if (procLogin.Login(textBox1.Text, textBox2.Text) != -1)
+
             {
                 this.Hide();
                 main a = new main();
@@ -35,6 +36,9 @@ namespace QuanlyKS_izzy
             {
                 switch (procLogin.Login(textBox1.Text, textBox2.Text))
                 { 
+                    case -1:
+                        MessageBox.Show("Tài khoản - Mật khẩu không đúng !","Lỗi");
+                        break;
                     case -2:
                         MessageBox.Show("Tài khoản không được phép trống","Lỗi");
                         break;

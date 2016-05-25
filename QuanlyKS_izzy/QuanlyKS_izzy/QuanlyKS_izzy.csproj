@@ -140,6 +140,12 @@
     <Compile Include="UserControls\ucServices.Designer.cs">
       <DependentUpon>ucServices.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTaiKhoan.Designer.cs">
+      <DependentUpon>ucTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UcThayDoiQuiDinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucServices.resx">
       <DependentUpon>ucServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTaiKhoan.resx">
+      <DependentUpon>ucTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcThayDoiQuiDinh.resx">
       <DependentUpon>UcThayDoiQuiDinh.cs</DependentUpon>
