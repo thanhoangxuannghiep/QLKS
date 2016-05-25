@@ -20,6 +20,12 @@ namespace QuanlyKS_izzy
 {
     public partial class main : RibbonForm
     {
+        private int userID;
+        public int UserID {
+            get { return userID; }
+            set { userID = value; }
+        }
+    
         public main()
         {
             InitializeComponent();
