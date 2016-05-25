@@ -47,7 +47,7 @@ namespace DTO
         }
         public static int createGetID(string[] array_values)
         {
-            string[] col = { "NgayLap", "TongGia", "NhanVien", "Phong", "MaPhieuThue" };
+            string[] col = { "NgayLap", "TongGia", "NhanVien", "Phong", "MaPhieuThue", "TinhTrang" };
             try
             {
                 DataProvider provider = new DataProvider();

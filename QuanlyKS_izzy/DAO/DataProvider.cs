@@ -13,9 +13,9 @@ namespace DAO
 {
     public class DataProvider
     {
-        //public string strConnection = "Server = .\\SQLEXPRESS;Integrated Security = True;Database = quanlykhachsan";
+        public string strConnection = "Server = .\\SQLEXPRESS;Integrated Security = True;Database = quanlykhachsan";
         //public string strConnection = "Server = localhost;Integrated Security = True;Database = quanlykhachsan";
-        public string strConnection = ConfigurationManager.ConnectionStrings["CString"].ConnectionString;
+        //public string strConnection = ConfigurationManager.ConnectionStrings["CString"].ConnectionString;
         protected SqlConnection cnn;
         protected SqlCommand cmd;
         protected SqlDataAdapter da;

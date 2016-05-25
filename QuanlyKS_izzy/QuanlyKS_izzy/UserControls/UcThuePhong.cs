@@ -196,8 +196,11 @@ namespace QuanlyKS_izzy.UserControls
                 DataTable dtDVSD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
                 DataColumn[] keysDVSD = new DataColumn[1];
                 keysDVSD[0] = dtDVSD.Columns[0];
-                dttb.PrimaryKey = keysDVSD;
+                dtDVSD.PrimaryKey = keysDVSD;
                 gridControlDVSuDung.DataSource = dtDVSD;
+
+                Phong.update("PHONG", "TinhTrangPhong = 1", "MaPhong = " + txtSoPhong.Tag.ToString());
+                loadGalleryPhong();
             }
             else
             {
@@ -209,7 +212,8 @@ namespace QuanlyKS_izzy.UserControls
         {
             try
             {
-                string[] arr_values = { DateTime.Now.ToString("yyyy-MM-dd"), "0", "2", txtSoPhong.Tag.ToString(), maPhieuThue.ToString() };
+                //user_m.userID.ToString()
+                string[] arr_values = { DateTime.Now.ToString("yyyy-MM-dd"), "0", "2", txtSoPhong.Tag.ToString(), maPhieuThue.ToString(), "1" };
                 return DTBill.createGetID(arr_values);
             }
             catch (Exception)
@@ -381,17 +385,10 @@ namespace QuanlyKS_izzy.UserControls
                 MessageBox.Show("Bạn phải chọn 1 dịch vụ khi thêm!");
             }
             else
-	        {
+            {
                 string[] values = { txtSoBill.Text, maDV, DateTime.Now.ToString("yyyy-MM-dd"), txtSoPhong.Tag.ToString() };
                 if (DTBillDetail.create(values))
                 {
-                    //dsdv hien co
-                    DataTable dttb = DTService.getAll();
-                    DataColumn[] keys = new DataColumn[1];
-                    keys[0] = dttb.Columns[0];
-                    dttb.PrimaryKey = keys;
-                    gridDSDichVu.DataSource = dttb;
-
                     //
                     DataTable dtDVSD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
                     DataColumn[] keysDVSD = new DataColumn[1];

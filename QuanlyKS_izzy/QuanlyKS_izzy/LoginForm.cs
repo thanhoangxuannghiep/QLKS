@@ -28,7 +28,7 @@ namespace QuanlyKS_izzy
             {
                 this.Hide();
                 main a = new main();
-                a.UserID = procLogin.Login(textBox1.Text, textBox2.Text)
+                a.UserID = procLogin.Login(textBox1.Text, textBox2.Text);
                 a.Show();
             }
             else

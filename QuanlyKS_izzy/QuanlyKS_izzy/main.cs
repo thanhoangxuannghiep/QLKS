@@ -31,7 +31,6 @@ namespace QuanlyKS_izzy
             InitializeComponent();
             InitSkinGallery();
             InitGrid();
-
         }
         void InitSkinGallery()
         {
@@ -179,8 +178,8 @@ namespace QuanlyKS_izzy
 
         private void btnImport_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmRestore restore = new frmRestore();
-            restore.Show();
+            //frmRestore restore = new frmRestore();
+            //restore.Show();
         }
 
         
