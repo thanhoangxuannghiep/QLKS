@@ -45,6 +45,26 @@ namespace DAO
                 return false;
             }
         }
+
+        public int ExecuteInsertQuery(string sqlStatement)
+        {
+            try
+            {
+                Connect();
+                cmd = new SqlCommand(sqlStatement);
+                cmd.Connection = this.cnn;
+                cmd.CommandType = CommandType.Text;
+                int id = (int)cmd.ExecuteScalar();
+                disConnect();
+                return id;
+            }
+            catch (Exception)
+            {
+                return -1;
+                throw;
+            }
+        }
+
         public void ExecuteUpdateQuery(string sqlStatement)
         {
             ExecuteNonQuery(sqlStatement);

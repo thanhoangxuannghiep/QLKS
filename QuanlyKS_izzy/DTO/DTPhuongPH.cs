@@ -45,6 +45,30 @@ namespace DTO
             string[] col = { "NgayLap", "TongGia", "NhanVien", "Phong", "MaPhieuThue" };
             return DTObject.insert("HOADON", col, value);
         }
+        public static int createGetID(string[] array_values)
+        {
+            string[] col = { "NgayLap", "TongGia", "NhanVien", "Phong", "MaPhieuThue" };
+            try
+            {
+                DataProvider provider = new DataProvider();
+                string _values = "";
+                for (int i = 0; i < array_values.Length; i++)
+                {
+                    _values += "N'";
+                    _values += array_values[i];
+                    _values += "'";
+                    if (i < array_values.Length - 1)
+                        _values += ",";
+                }
+                string sql = "insert into HOADON(" + String.Join(",", col) + ") OUTPUT INSERTED.MaHoaDon values(" + _values + ")";
+                return provider.ExecuteInsertQuery(sql);
+            }
+            catch (Exception)
+            {
+                return -1;
+                throw;
+            }
+        }
         public static bool update(string _set, string _where)
         {
             try
@@ -90,7 +114,7 @@ namespace DTO
         }
     }
 
-    public class DTBillDetail
+    public class DTBillDetail : DTObject
     {
         public static bool create(string[] value)
         {
@@ -121,6 +145,21 @@ namespace DTO
                 DataProvider provider = new DataProvider();
                 //string sql = "DELETE FROM HOADON WHERE MaHoaDon = " + id.ToString();
                 string sql2 = "DELETE FROM CHITIETHOADON WHERE UUID=N'" + id.ToString() + "'";
+                //provider.ExecuteNonQuery(sql2);
+                return provider.ExecuteNonQuery(sql2);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static bool deletebyAllInformationOrder(string maHD, string maDV, string ngaySuDung, int phong)
+        {
+            try
+            {
+                DataProvider provider = new DataProvider();
+                //string sql = "DELETE FROM HOADON WHERE MaHoaDon = " + id.ToString();
+                string sql2 = "DELETE FROM CHITIETHOADON WHERE MaHD=N'" + maHD + "' AND MaDichVu = '" + maDV + "'" + "' AND NgaySuDung = '" + ngaySuDung + "'" + "' AND Phong = '" + phong + "'";
                 //provider.ExecuteNonQuery(sql2);
                 return provider.ExecuteNonQuery(sql2);
             }
@@ -184,6 +223,31 @@ namespace DTO
 
             string[] col = { "TenPhieuThue", "TinhTrangPhieuThue", "MaPhong", "NgayLap", "NgayBatDau", "NgayKetThuc", "MaKH" };
             return DTObject.insert("PHIEUTHUE", col, value);
+        }
+        public static int createGetID(string[] array_values)
+        {
+
+            string[] col = { "TenPhieuThue", "TinhTrangPhieuThue", "MaPhong", "NgayLap", "NgayBatDau", "NgayKetThuc", "MaKH" };
+            try
+            {
+                DataProvider provider = new DataProvider();
+                string _values = "";
+                for (int i = 0; i < array_values.Length; i++)
+                {
+                    _values += "N'";
+                    _values += array_values[i];
+                    _values += "'";
+                    if (i < array_values.Length - 1)
+                        _values += ",";
+                }
+                string sql = "insert into PHIEUTHUE(" + String.Join(",", col) + ") OUTPUT INSERTED.MaPhieuThue values(" + _values + ")";
+                return provider.ExecuteInsertQuery(sql);
+            }
+            catch (Exception)
+            {
+                return -1;
+                throw;
+            }
         }
         public static bool update(string _set, string _where)
         {

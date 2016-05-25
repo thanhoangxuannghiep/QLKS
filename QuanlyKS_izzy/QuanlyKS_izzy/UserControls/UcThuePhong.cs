@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
 using BUS;
+using DTO;
+using System.Globalization;
 
 namespace QuanlyKS_izzy.UserControls
 {
@@ -81,6 +83,8 @@ namespace QuanlyKS_izzy.UserControls
             string maPhong_TrangThai = e.Item.Tag.ToString();
             txtSoPhongBill.Text = e.Item.Caption;
 
+            //cboLoaiPhong.DataSource = LoaiKH.getAll("LOAIKHACHHANG");
+
             // add maphong vao txtSoPhong.Tag de su dung khi dat phong, ko phai lay lai ma phong
             txtSoPhong.Tag = maPhong_TrangThai.Split('_')[0];
             string trangThaiP = maPhong_TrangThai.Split('_')[1];
@@ -96,6 +100,63 @@ namespace QuanlyKS_izzy.UserControls
                 btnXoaKH.Enabled = true;
                 btnSuaKH.Enabled = true;
                 showBill(maPhongClick);
+
+                // load thong tin người trong phòng
+                try
+                {
+                    DataTable dtHoaDon = DTBill.getAllWhere("HOADON", "PHONG = " + txtSoPhong.Tag.ToString() + " AND (TinhTrang = 0 OR TinhTrang = 1)");
+                    string maHD = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
+
+                    DataTable dtPhieuThuePhong = DTRent.getAllWhere("PHIEUTHUE", "MaPhong = " + txtSoPhong.Tag.ToString() + " AND TinhTrangPhieuThue = 1");
+                    string maPhieuThue = dtPhieuThuePhong.Rows[0]["MaPhieuThue"].ToString();
+                    txtMaPhieuThue.Text = maPhieuThue; 
+                    
+                    DataTable dtKH = KhachHang.getAllWhere("KHACHHANG", "MaKH = " + dtPhieuThuePhong.Rows[0]["MaKH"].ToString());
+                    txtKhachHang.Text = dtKH.Rows[0]["TenKH"].ToString();
+                    txtSoCMT.Text = dtKH.Rows[0]["SoCMND"].ToString();
+                    cboGioiTinh.SelectedItem = dtKH.Rows[0]["GioiTinh"].ToString() == "1" ? "Nam" : "Nữ";
+                    txtSoDT.Text = dtKH.Rows[0]["SoDienThoai"].ToString();
+                    cboLoaiKH.SelectedItem = dtKH.Rows[0]["LoaiKHID"].ToString() == "1" ? "Nội Địa" : "Quốc Tế";
+
+
+                    txtSoNguoi.Text = "1";
+                    dtNgayThue.Text = dtPhieuThuePhong.Rows[0]["NgayBatDau"].ToString();
+                    dtNgayTra.Text = dtPhieuThuePhong.Rows[0]["NgayKetThuc"].ToString();
+
+                    //HD
+                    txtSoBill.Text = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
+                    txtPhiDichVu.Text = "0";
+                    double phuThu = dtKH.Rows[0]["LoaiKHID"].ToString() == "1" ? 0 : (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1);
+                    txtPhuThu.Text = phuThu.ToString();
+                    txtTienThuePhong.Text = dtHoaDon.Rows[0]["TongGia"].ToString();
+                    txtVAT.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1).ToString();
+                    txtTongTien.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) + (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1)).ToString();
+
+                    //dsdv hien co
+                    DataTable dttb = DTService.getAll();
+                    DataColumn[] keys = new DataColumn[1];
+                    keys[0] = dttb.Columns[0];
+                    dttb.PrimaryKey = keys;
+                    gridDSDichVu.DataSource = dttb;
+
+                    //ds dich vu da su dung
+                    DataTable dtCTHD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
+                    string[] arrayDV = new string[dtCTHD.Rows.Count];
+                    for (int i = 0; i < dtCTHD.Rows.Count; i++)
+                    {
+                        arrayDV[i] = dtCTHD.Rows[i]["MaDichVu"].ToString();
+                    }
+                    DataTable dtDVSD = DTService.getAllWhere("DICHVU", "MaDichVu in (" + String.Join(",", arrayDV) + ")");
+                    DataColumn[] keysDVSD = new DataColumn[1];
+                    keysDVSD[0] = dtDVSD.Columns[0];
+                    dtDVSD.PrimaryKey = keysDVSD;
+                    gridControlDVSuDung.DataSource = dtDVSD;
+                }
+                catch (Exception)
+                {
+                    return;
+                    throw;
+                }
 
             }
             else
@@ -116,20 +177,70 @@ namespace QuanlyKS_izzy.UserControls
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             string[] column_name = { "TenKH", "GioiTinh", "SoCMND", "LoaiKHID", "SoDienThoai", "Email", "DiemThuong" };
-            QLKhachHang.insert("KHACHHANG", column_name, txtKhachHang.Text, (cboGioiTinh.SelectedItem == "Nam" ? 1 : 0), txtSoCMT.Text, (cboLoaiKH.SelectedItem == "Nội Địa" ? 1 : 2), txtSoDT.Text, null, 0);
+            int maKH = QLKhachHang.insert("KHACHHANG", column_name, txtKhachHang.Text, (cboGioiTinh.SelectedItem == "Nam" ? 1 : 0), txtSoCMT.Text, (cboLoaiKH.SelectedItem == "Nội Địa" ? 1 : 2), txtSoDT.Text, null, 0);
+            txtMaKH.Text = maKH.ToString();
+            int maPhieuThue = RentAdd();
 
-            RentAdd();
+            int maHD = AddOrder(maPhieuThue);
+            txtSoBill.Text = maHD.ToString();
+            if (maHD != -1)
+            {
+                MessageBox.Show("Hóa Đơn Đã được thêm!");
+
+                DataTable dttb = DTService.getAll();
+                DataColumn[] keys = new DataColumn[1];
+                keys[0] = dttb.Columns[0];
+                dttb.PrimaryKey = keys;
+                gridDSDichVu.DataSource = dttb;
+
+                DataTable dtDVSD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
+                DataColumn[] keysDVSD = new DataColumn[1];
+                keysDVSD[0] = dtDVSD.Columns[0];
+                dttb.PrimaryKey = keysDVSD;
+                gridControlDVSuDung.DataSource = dtDVSD;
+            }
+            else
+            {
+                MessageBox.Show("Lỗi khi thêm hóa đơn!");
+            }
         }
 
-        private bool RentAdd()
+        private int AddOrder(int maPhieuThue)
         {
-            //string[] value = { "Phiếu Thuê Phòng " + txtSoPhong, cbRentStatus.SelectedText.ToString(), txtSoPhong.Tag, "now()", dtNgayTra.Text, dateEnd.EditValue.ToString(), lookUpCustomer.EditValue.ToString() };
-            //if (procUCRent.create(value) == -1)
-            //{
-            //    MessageBox.Show("Thêm phiếu thuê thành công !", "Thông báo");
-            //    gridCRent.DataSource = null;
-            //    gridCRent.DataSource = procUCRent.getAll();
-            //}
+            try
+            {
+                string[] arr_values = { DateTime.Now.ToString("yyyy-MM-dd"), "0", "2", txtSoPhong.Tag.ToString(), maPhieuThue.ToString() };
+                return DTBill.createGetID(arr_values);
+            }
+            catch (Exception)
+            {
+                return -1;
+                throw;
+            }
+        }
+        private int RentAdd()
+        {
+            // Tình trạng phiếu thue giờ qui đinh là :
+            // -1 là hủy phiếu
+            // 0 là phiếu đang chờ checkin
+            // 1 là phiếu đã checkin rồi
+            DateTime dateNgayTra = DateTime.ParseExact(dtNgayTra.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime dateNgayThue = DateTime.ParseExact(dtNgayThue.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime dateLapPhieu = DateTime.Now;
+            string[] value = { "Phiếu Thuê Phòng " + txtSoPhong.Text, "0", txtSoPhong.Tag.ToString(), dateLapPhieu.ToString("yyyy-MM-dd"), dateNgayTra.ToString("yyyy-MM-dd"), dateNgayThue.ToString("yyyy-MM-dd"), txtMaKH.Text };
+            int maPhieuThue = procUCRent.createGetID(value);
+            txtMaPhieuThue.Text = maPhieuThue.ToString();
+            if (txtMaPhieuThue.Text != "-1")
+            {
+                MessageBox.Show("Thêm phiếu thuê thành công !", "Thông báo");
+                //gridCRent.DataSource = null;
+                //gridCRent.DataSource = procUCRent.getAll();
+
+            }
+            else
+            {
+                MessageBox.Show("Thêm phiếu thuê phòng lỗi!");
+            }
             //else
             //{
             //    switch (procUCRent.create(value))
@@ -157,7 +268,7 @@ namespace QuanlyKS_izzy.UserControls
             //            break;
             //    }
             //}
-            return true;
+            return maPhieuThue;
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -192,7 +303,44 @@ namespace QuanlyKS_izzy.UserControls
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                
+                DTBill.update("TinhTrang = 2", "MaHoaDon = " + txtSoBill.Text);
+                Phong.update("PHONG", "TinhTrangPhong = -1", "MaPhong = " + txtSoPhong.Tag.ToString());
+                DTRent.update("TinhTrangPhieuThue = 2", "MaPhieuThue = " + txtMaPhieuThue.Text.ToString());
+                //load lại danh sách phòng
+                dt = QLThuePhong.getAll();
+                galleryControl1.Gallery.Groups[0].Items.Clear();
+                Bitmap image;
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    int tinhTrang = Int32.Parse(dr["TinhTrangPhong"].ToString());
+                    if (tinhTrang == 1)
+                    {
+                        image = new Bitmap(Properties.Resources.close);
+                    }
+                    else if (tinhTrang == 0)
+                    {
+                        image = new Bitmap(Properties.Resources.checkInRom);
+                    }
+                    else
+                    {
+                        image = new Bitmap(Properties.Resources.open);
+                    }
+
+                    GalleryItem item = new GalleryItem(image, dr["TenPhong"].ToString(), dr["MoTaPhong"].ToString() == "" ? "Ghi Chú" : dr["MoTaPhong"].ToString());
+                    item.Tag = dr["MaPhong"].ToString() + "_" + dr["TinhTrangPhong"].ToString().Trim();
+                    galleryControl1.Gallery.Groups[0].Items.Add(item);
+                }
+                MessageBox.Show("Thanh Toán Thành Công!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Trong Quá trình thanh toán");
+                throw;
+            }
         }
 
         private void cboPhongChuyen_SelectedIndexChanged(object sender, EventArgs e)
@@ -226,6 +374,50 @@ namespace QuanlyKS_izzy.UserControls
         }
 
         private void btnThemDV_Click(object sender, EventArgs e)
+        {
+            string maDV = txtDichVuSelect.Text;
+            if (String.IsNullOrEmpty(maDV))
+            {
+                MessageBox.Show("Bạn phải chọn 1 dịch vụ khi thêm!");
+            }
+            else
+	        {
+                string[] values = { txtSoBill.Text, maDV, DateTime.Now.ToString("yyyy-MM-dd"), txtSoPhong.Tag.ToString() };
+                if (DTBillDetail.create(values))
+                {
+                    //dsdv hien co
+                    DataTable dttb = DTService.getAll();
+                    DataColumn[] keys = new DataColumn[1];
+                    keys[0] = dttb.Columns[0];
+                    dttb.PrimaryKey = keys;
+                    gridDSDichVu.DataSource = dttb;
+
+                    //
+                    DataTable dtDVSD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
+                    DataColumn[] keysDVSD = new DataColumn[1];
+                    keysDVSD[0] = dtDVSD.Columns[0];
+                    dtDVSD.PrimaryKey = keysDVSD;
+                    gridControlDVSuDung.DataSource = dtDVSD;
+                    MessageBox.Show("Thêm Dịch vụ thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi không thêm được dịch vụ!");
+                }
+	        }
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            int rowHandle = gridView1.FocusedRowHandle;
+            if (rowHandle != DevExpress.XtraGrid.GridControl.InvalidRowHandle)
+            {
+                DataRow dr = this.gridView1.GetDataRow(rowHandle);
+                txtDichVuSelect.Text = dr["MaDichVu"].ToString();
+            }
+        }
+
+        private void btnXoaDV_Click(object sender, EventArgs e)
         {
 
         }

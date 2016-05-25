@@ -25,6 +25,21 @@ namespace DTO
                 throw;
             }
         }
+        public static DataTable getAllWhere(string name_table, string where)
+        {
+            DataTable data;
+            try
+            {
+                DataProvider provider = new DataProvider();
+                string sql = "select * from " + name_table + " WHERE " + where;
+                data = provider.ExecuteQuery_DataTble(sql);
+                return data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static bool insert(string name_table, string[] array_columns, string[] array_values)
         {
             try

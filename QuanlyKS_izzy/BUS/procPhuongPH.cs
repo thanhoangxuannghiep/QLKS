@@ -129,7 +129,16 @@ namespace BUS
             DTRent.create(_value);
             return -1;
         }
+        public static int createGetID(string[] _value)
+        {
+            for (int i = 0; i < _value.Length; i++)
+            {
+                if (String.IsNullOrWhiteSpace(_value[i]))
+                    return i;
+            }
 
+            return DTRent.createGetID(_value);
+        }
         public static int update(string[] _set, string _where)
         {
             string _value = "";
