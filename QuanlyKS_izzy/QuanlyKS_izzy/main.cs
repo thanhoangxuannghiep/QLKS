@@ -14,12 +14,18 @@ using DevExpress.LookAndFeel;
 using DevExpress.UserSkins;
 using DevExpress.XtraTab;
 using DevExpress.XtraEditors;
-
-
+using Microsoft.SqlServer;
+using DTO;
 namespace QuanlyKS_izzy
 {
     public partial class main : RibbonForm
     {
+        private int userID;
+        public int UserID {
+            get { return userID; }
+            set { userID = value; }
+        }
+    
         public main()
         {
             InitializeComponent();
@@ -152,6 +158,29 @@ namespace QuanlyKS_izzy
             tabContent.Controls.Clear();
             ucNhanVien.Dock = DockStyle.Fill;
             tabContent.Controls.Add(ucNhanVien);
+        }
+
+        private void btnBackup_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string fullpath = "quanlykhachsan-" + System.DateTime.Now.Date.ToString("dd-MM-yyyy") + ".bak";
+
+            try
+            {
+                DBManager.exportDB(fullpath);
+                XtraMessageBox.Show("Backup dữ liệu thành công !","Thông báo");
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Quá trình backup thất bại. Vui lòng sử SQL Studio để backup !","Lỗi");
+            }
+
+
+        }
+
+        private void btnImport_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmRestore restore = new frmRestore();
+            restore.Show();
         }
 
         

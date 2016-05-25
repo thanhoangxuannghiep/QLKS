@@ -24,10 +24,11 @@ namespace QuanlyKS_izzy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (procLogin.Login(textBox1.Text, textBox2.Text) == -1)
+            if (procLogin.Login(textBox1.Text, textBox2.Text) > 0)
             {
                 this.Hide();
                 main a = new main();
+                a.UserID = procLogin.Login(textBox1.Text, textBox2.Text)
                 a.Show();
             }
             else
@@ -39,6 +40,9 @@ namespace QuanlyKS_izzy
                         break;
                     case -3:
                         MessageBox.Show("Mật khẩu không được phép trống", "Lỗi");
+                        break;
+                    default:
+                        MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Lỗi");
                         break;
                 }
             }
