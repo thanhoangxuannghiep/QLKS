@@ -156,15 +156,17 @@ namespace QuanlyKS_izzy
 
         private void btnBackup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            string backup = "Backup";
-            bool exists = System.IO.Directory.Exists(backup);
-
-            if (!exists)
-                System.IO.Directory.CreateDirectory(backup);
-
             string fullpath = "quanlykhachsan-" + System.DateTime.Now.Date.ToString("dd-MM-yyyy") + ".bak";
 
-            DBManager.exportDB(fullpath);
+            try
+            {
+                DBManager.exportDB(fullpath);
+                XtraMessageBox.Show("Backup dữ liệu thành công !","Thông báo");
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Quá trình backup thất bại. Vui lòng sử SQL Studio để backup !","Lỗi");
+            }
 
 
         }
