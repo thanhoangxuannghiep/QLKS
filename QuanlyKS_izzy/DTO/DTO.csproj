@@ -42,7 +42,7 @@
     <Compile Include="DTObject.cs" />
     <Compile Include="DTPhuongPH.cs" />
     <Compile Include="KhachHang.cs" />
-    <Compile Include="NhanVienDTO.cs" />
+    <Compile Include="TaiKhoanDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

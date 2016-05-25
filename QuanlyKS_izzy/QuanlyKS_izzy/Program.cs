@@ -21,7 +21,7 @@ namespace QuanlyKS_izzy
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
             //Application.Run(new UserControls.LoginForm());
-            Application.Run(new LoginForm());
+            Application.Run(new main());
         }
     }
 }

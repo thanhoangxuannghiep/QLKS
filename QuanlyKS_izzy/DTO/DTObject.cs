@@ -33,9 +33,20 @@ namespace DTO
                 string _values = "";
                 for (int i = 0; i < array_values.Length; i++)
                 {
-                    _values += "N'";
-                    _values += array_values[i];
-                    _values += "'";
+                    string temp = array_values[i].Split('/');
+                    if (temp.Count() == 3)
+                    {
+                        _values += "convert(date, '";
+                        _values += array_values[i];
+                        _values += "', 105)";
+                    }
+                    else
+                    {
+                        _values += "N'";
+                        _values += array_values[i];
+                        _values += "'";
+                    }
+                    
                     if (i < array_values.Length -1)
                         _values += ",";
                 }

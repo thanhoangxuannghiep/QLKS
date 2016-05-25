@@ -513,6 +513,7 @@
             this.btnDSTK.Id = 92;
             this.btnDSTK.LargeGlyph = global::QuanlyKS_izzy.Properties.Resources.account;
             this.btnDSTK.Name = "btnDSTK";
+            this.btnDSTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSTK_ItemClick);
             // 
             // btnDichvu
             // 
