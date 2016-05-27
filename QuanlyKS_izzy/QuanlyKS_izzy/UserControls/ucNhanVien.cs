@@ -21,7 +21,7 @@ namespace QuanlyKS_izzy.UserControls
 
         private void ucNhanVien_Load(object sender, EventArgs e)
         {
-            gridControlNhanVien.DataSource = NhanVienBUS.getAll();
+            gridControlNhanVien.DataSource = TaiKhoanBUS.getAll();
 
             //lookUpRoomID.Properties.DataSource = procUCRent.getRoom();
             //lookUpRoomID.Properties.DisplayMember = "TenPhong";

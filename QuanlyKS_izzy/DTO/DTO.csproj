@@ -44,7 +44,7 @@
     <Compile Include="KhachHang.cs" />
     <Compile Include="LoaiKH.cs" />
     <Compile Include="Phong.cs" />
-    <Compile Include="NhanVienDTO.cs" />
+    <Compile Include="TaiKhoanDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
