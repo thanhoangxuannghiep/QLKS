@@ -18,6 +18,10 @@ namespace QuanlyKS_izzy.UserControls
     {
         string maPhongClick;
         DataTable dt;
+        DataTable dtDVSD;
+        DataTable dtHoaDon;
+        DataTable dtKH;
+
         public UcThuePhong()
         {
             InitializeComponent();
@@ -104,14 +108,11 @@ namespace QuanlyKS_izzy.UserControls
                 // load thong tin người trong phòng
                 try
                 {
-                    DataTable dtHoaDon = DTBill.getAllWhere("HOADON", "PHONG = " + txtSoPhong.Tag.ToString() + " AND (TinhTrang = 0 OR TinhTrang = 1)");
-                    string maHD = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
-
                     DataTable dtPhieuThuePhong = DTRent.getAllWhere("PHIEUTHUE", "MaPhong = " + txtSoPhong.Tag.ToString() + " AND TinhTrangPhieuThue = 1");
                     string maPhieuThue = dtPhieuThuePhong.Rows[0]["MaPhieuThue"].ToString();
                     txtMaPhieuThue.Text = maPhieuThue; 
                     
-                    DataTable dtKH = KhachHang.getAllWhere("KHACHHANG", "MaKH = " + dtPhieuThuePhong.Rows[0]["MaKH"].ToString());
+                    dtKH = KhachHang.getAllWhere("KHACHHANG", "MaKH = " + dtPhieuThuePhong.Rows[0]["MaKH"].ToString());
                     txtKhachHang.Text = dtKH.Rows[0]["TenKH"].ToString();
                     txtSoCMT.Text = dtKH.Rows[0]["SoCMND"].ToString();
                     cboGioiTinh.SelectedItem = dtKH.Rows[0]["GioiTinh"].ToString() == "1" ? "Nam" : "Nữ";
@@ -124,13 +125,7 @@ namespace QuanlyKS_izzy.UserControls
                     dtNgayTra.Text = dtPhieuThuePhong.Rows[0]["NgayKetThuc"].ToString();
 
                     //HD
-                    txtSoBill.Text = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
-                    txtPhiDichVu.Text = "0";
-                    double phuThu = dtKH.Rows[0]["LoaiKHID"].ToString() == "1" ? 0 : (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1);
-                    txtPhuThu.Text = phuThu.ToString();
-                    txtTienThuePhong.Text = dtHoaDon.Rows[0]["TongGia"].ToString();
-                    txtVAT.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1).ToString();
-                    txtTongTien.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) + (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1)).ToString();
+                    loadHoaDon();
 
                     //dsdv hien co
                     DataTable dttb = DTService.getAll();
@@ -141,16 +136,24 @@ namespace QuanlyKS_izzy.UserControls
 
                     //ds dich vu da su dung
                     DataTable dtCTHD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
-                    string[] arrayDV = new string[dtCTHD.Rows.Count];
-                    for (int i = 0; i < dtCTHD.Rows.Count; i++)
+                    if (dtCTHD.Rows.Count != 0)
                     {
-                        arrayDV[i] = dtCTHD.Rows[i]["MaDichVu"].ToString();
+                        string[] arrayDV = new string[dtCTHD.Rows.Count];
+                        for (int i = 0; i < dtCTHD.Rows.Count; i++)
+                        {
+                            arrayDV[i] = dtCTHD.Rows[i]["MaDichVu"].ToString();
+                        }
+                        dtDVSD = DTService.getAllWhere("DICHVU", "MaDichVu in (" + String.Join(",", arrayDV) + ")");
+                        DataColumn[] keysDVSD = new DataColumn[1];
+                        keysDVSD[0] = dtDVSD.Columns[0];
+                        dtDVSD.PrimaryKey = keysDVSD;
+                        gridControlDVSuDung.DataSource = dtDVSD;
                     }
-                    DataTable dtDVSD = DTService.getAllWhere("DICHVU", "MaDichVu in (" + String.Join(",", arrayDV) + ")");
-                    DataColumn[] keysDVSD = new DataColumn[1];
-                    keysDVSD[0] = dtDVSD.Columns[0];
-                    dtDVSD.PrimaryKey = keysDVSD;
-                    gridControlDVSuDung.DataSource = dtDVSD;
+                    else
+                    {
+                        dtDVSD = new DataTable();
+                        gridControlDVSuDung.DataSource = dtDVSD;
+                    }
                 }
                 catch (Exception)
                 {
@@ -174,6 +177,20 @@ namespace QuanlyKS_izzy.UserControls
             }
         }
 
+        private void loadHoaDon()
+        {
+            dtHoaDon = DTBill.getAllWhere("HOADON", "PHONG = " + txtSoPhong.Tag.ToString() + " AND (TinhTrang = 0 OR TinhTrang = 1)");
+            string maHD = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
+
+            txtSoBill.Text = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
+            txtPhiDichVu.Text = "0";
+            double phuThu = dtKH.Rows[0]["LoaiKHID"].ToString() == "1" ? 0 : (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1);
+            txtPhuThu.Text = phuThu.ToString();
+            txtTienThuePhong.Text = dtHoaDon.Rows[0]["TongGia"].ToString();
+            txtVAT.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1).ToString();
+            txtTongTien.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) + (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1)).ToString();
+        }
+
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             string[] column_name = { "TenKH", "GioiTinh", "SoCMND", "LoaiKHID", "SoDienThoai", "Email", "DiemThuong" };
@@ -193,7 +210,7 @@ namespace QuanlyKS_izzy.UserControls
                 dttb.PrimaryKey = keys;
                 gridDSDichVu.DataSource = dttb;
 
-                DataTable dtDVSD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
+                dtDVSD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
                 DataColumn[] keysDVSD = new DataColumn[1];
                 keysDVSD[0] = dtDVSD.Columns[0];
                 dtDVSD.PrimaryKey = keysDVSD;
@@ -231,7 +248,7 @@ namespace QuanlyKS_izzy.UserControls
             DateTime dateNgayTra = DateTime.ParseExact(dtNgayTra.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             DateTime dateNgayThue = DateTime.ParseExact(dtNgayThue.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             DateTime dateLapPhieu = DateTime.Now;
-            string[] value = { "Phiếu Thuê Phòng " + txtSoPhong.Text, "0", txtSoPhong.Tag.ToString(), dateLapPhieu.ToString("yyyy-MM-dd"), dateNgayTra.ToString("yyyy-MM-dd"), dateNgayThue.ToString("yyyy-MM-dd"), txtMaKH.Text };
+            string[] value = { "Phiếu Thuê Phòng " + txtSoPhong.Text, "1", txtSoPhong.Tag.ToString(), dateLapPhieu.ToString("yyyy-MM-dd"), dateNgayTra.ToString("yyyy-MM-dd"), dateNgayThue.ToString("yyyy-MM-dd"), txtMaKH.Text };
             int maPhieuThue = procUCRent.createGetID(value);
             txtMaPhieuThue.Text = maPhieuThue.ToString();
             if (txtMaPhieuThue.Text != "-1")
@@ -390,12 +407,47 @@ namespace QuanlyKS_izzy.UserControls
                 if (DTBillDetail.create(values))
                 {
                     //
-                    DataTable dtDVSD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
-                    DataColumn[] keysDVSD = new DataColumn[1];
-                    keysDVSD[0] = dtDVSD.Columns[0];
-                    dtDVSD.PrimaryKey = keysDVSD;
-                    gridControlDVSuDung.DataSource = dtDVSD;
-                    MessageBox.Show("Thêm Dịch vụ thành công!");
+                    //DataRow dr = new DataRow(txtSoBill.Text, maDV, DateTime.Now.ToString("yyyy-MM-dd"), txtSoPhong.Tag.ToString());
+                    DataTable dtCTHD = DTBillDetail.getAllWhere("CHITIETHOADON", "MAHD = " + txtSoBill.Text + " AND Phong = " + txtSoPhong.Tag.ToString());
+                    if (dtCTHD.Rows.Count != 0)
+                    {
+                        string[] arrayDV = new string[dtCTHD.Rows.Count];
+                        for (int i = 0; i < dtCTHD.Rows.Count; i++)
+                        {
+                            arrayDV[i] = dtCTHD.Rows[i]["MaDichVu"].ToString();
+                        }
+                        dtDVSD = DTService.getAllWhere("DICHVU", "MaDichVu in (" + String.Join(",", arrayDV) + ")");
+                        DataColumn[] keysDVSD = new DataColumn[1];
+                        keysDVSD[0] = dtDVSD.Columns[0];
+                        dtDVSD.PrimaryKey = keysDVSD;
+                        gridControlDVSuDung.DataSource = dtDVSD;
+
+                        decimal giaDVselected = 0;
+                        foreach (DataRow item in dtDVSD.Rows)
+	                    {
+		                    if(item["MaDichVu"].ToString() == maDV)
+                            {
+                                giaDVselected = Decimal.Parse(item["Gia"].ToString());
+                            }
+	                    } 
+                        
+                        DataTable dtHD = DTBill.getAllWhere("HOADON", "MaHoaDon = " + dtCTHD.Rows[0]["MaHD"].ToString());
+
+                        if (DTBill.update("TongGia = " + (Decimal.Parse(dtHD.Rows[0]["TongGia"].ToString()) + giaDVselected), "MaHoaDon = " + dtCTHD.Rows[0]["MaHD"].ToString()))
+                        {
+                            //HD
+                            loadHoaDon();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi Khi cập nhật hóa đơn!");
+                        }
+                    }
+                    else
+                    {
+                        dtDVSD = new DataTable();
+                        gridControlDVSuDung.DataSource = dtDVSD;
+                    }
                 }
                 else
                 {

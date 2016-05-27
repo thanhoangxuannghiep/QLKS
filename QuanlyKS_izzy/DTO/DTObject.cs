@@ -37,6 +37,8 @@ namespace DTO
             }
             catch (Exception)
             {
+                DataTable dt = new DataTable();
+                return dt;
                 throw;
             }
         }
