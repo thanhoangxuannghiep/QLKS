@@ -457,12 +457,20 @@
             // dtNgayTra
             // 
             this.dtNgayTra.EditValue = null;
-            this.dtNgayTra.Location = new System.Drawing.Point(90, 67);
+            this.dtNgayTra.Location = new System.Drawing.Point(90, 97);
             this.dtNgayTra.Name = "dtNgayTra";
             this.dtNgayTra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtNgayTra.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dtNgayTra.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtNgayTra.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
+            this.dtNgayTra.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
+            this.dtNgayTra.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtNgayTra.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
+            this.dtNgayTra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtNgayTra.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm:ss";
+            this.dtNgayTra.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
             this.dtNgayTra.Size = new System.Drawing.Size(134, 20);
             this.dtNgayTra.TabIndex = 3;
             // 
@@ -479,14 +487,20 @@
             // dtNgayThue
             // 
             this.dtNgayThue.EditValue = null;
-            this.dtNgayThue.Location = new System.Drawing.Point(90, 99);
+            this.dtNgayThue.Location = new System.Drawing.Point(90, 64);
             this.dtNgayThue.MenuManager = this.barManager1;
             this.dtNgayThue.Name = "dtNgayThue";
             this.dtNgayThue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtNgayThue.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dtNgayThue.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtNgayThue.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
+            this.dtNgayThue.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
+            this.dtNgayThue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtNgayThue.Properties.EditFormat.FormatString = "yyyy/MM/dd HH:mm:ss";
+            this.dtNgayThue.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtNgayThue.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm:ss";
             this.dtNgayThue.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
             this.dtNgayThue.Size = new System.Drawing.Size(134, 20);
             this.dtNgayThue.TabIndex = 5;
@@ -553,7 +567,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(10, 70);
+            this.labelControl5.Location = new System.Drawing.Point(10, 100);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(66, 13);
             this.labelControl5.TabIndex = 2;
@@ -578,7 +592,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(24, 102);
+            this.labelControl4.Location = new System.Drawing.Point(24, 67);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(52, 13);
             this.labelControl4.TabIndex = 4;

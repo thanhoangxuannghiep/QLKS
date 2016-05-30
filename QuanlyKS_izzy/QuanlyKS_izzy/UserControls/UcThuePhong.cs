@@ -179,16 +179,29 @@ namespace QuanlyKS_izzy.UserControls
 
         private void loadHoaDon()
         {
-            dtHoaDon = DTBill.getAllWhere("HOADON", "PHONG = " + txtSoPhong.Tag.ToString() + " AND (TinhTrang = 0 OR TinhTrang = 1)");
-            string maHD = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
+            try
+            {
+                double giaPhong = 100000;
+                dtHoaDon = DTBill.getAllWhere("HOADON", "PHONG = " + txtSoPhong.Tag.ToString() + " AND (TinhTrang = 0 OR TinhTrang = 1)");
+                string maHD = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
 
-            txtSoBill.Text = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
-            txtPhiDichVu.Text = "0";
-            double phuThu = dtKH.Rows[0]["LoaiKHID"].ToString() == "1" ? 0 : (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1);
-            txtPhuThu.Text = phuThu.ToString();
-            txtTienThuePhong.Text = dtHoaDon.Rows[0]["TongGia"].ToString();
-            txtVAT.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1).ToString();
-            txtTongTien.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) + (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) * 0.1)).ToString();
+                txtSoBill.Text = dtHoaDon.Rows[0]["MaHoaDon"].ToString();
+                txtPhiDichVu.Text = dtHoaDon.Rows[0]["TongGia"].ToString();
+                DataTable dtRent = DTRent.getAllWhere("PHIEUTHUE", "MaPhieuThue = " + txtMaPhieuThue.Text);
+                DateTime dateNgayThue = DateTime.ParseExact(dtRent.Rows[0]["NgayBatDau"].ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+                DateTime dateNgayTra = DateTime.ParseExact(dtRent.Rows[0]["NgayKetThuc"].ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+                double tienThuePhong = Math.Floor((dateNgayTra - dateNgayThue).TotalHours / 24 * giaPhong);
+                txtTienThuePhong.Text = tienThuePhong.ToString();
+                double phuThu = dtKH.Rows[0]["LoaiKHID"].ToString() == "1" ? 0 : (tienThuePhong * 0.1);
+                txtPhuThu.Text = phuThu.ToString();
+                txtVAT.Text = ((Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) + tienThuePhong) * 0.1).ToString();
+                txtTongTien.Text = (Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) + tienThuePhong + ((Double.Parse(dtHoaDon.Rows[0]["TongGia"].ToString()) + tienThuePhong) * 0.1) + phuThu).ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng chọn mũi giờ Việt Nam!");
+                throw;
+            }
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
@@ -245,10 +258,10 @@ namespace QuanlyKS_izzy.UserControls
             // -1 là hủy phiếu
             // 0 là phiếu đang chờ checkin
             // 1 là phiếu đã checkin rồi
-            DateTime dateNgayTra = DateTime.ParseExact(dtNgayTra.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            DateTime dateNgayThue = DateTime.ParseExact(dtNgayThue.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime dateNgayTra = DateTime.ParseExact(dtNgayTra.Text, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+            DateTime dateNgayThue = DateTime.ParseExact(dtNgayThue.Text, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
             DateTime dateLapPhieu = DateTime.Now;
-            string[] value = { "Phiếu Thuê Phòng " + txtSoPhong.Text, "1", txtSoPhong.Tag.ToString(), dateLapPhieu.ToString("yyyy-MM-dd"), dateNgayTra.ToString("yyyy-MM-dd"), dateNgayThue.ToString("yyyy-MM-dd"), txtMaKH.Text };
+            string[] value = { "Phiếu Thuê Phòng " + txtSoPhong.Text, "1", txtSoPhong.Tag.ToString(), dateLapPhieu.ToString("yyyy-MM-dd HH:mm:ss"), dateNgayTra.ToString("yyyy-MM-dd HH:mm:ss"), dateNgayThue.ToString("yyyy-MM-dd HH:mm:ss"), txtMaKH.Text };
             int maPhieuThue = procUCRent.createGetID(value);
             txtMaPhieuThue.Text = maPhieuThue.ToString();
             if (txtMaPhieuThue.Text != "-1")
@@ -326,7 +339,12 @@ namespace QuanlyKS_izzy.UserControls
         {
             try
             {
-                
+                if (String.IsNullOrWhiteSpace(DTRent.getAllWhere("PHIEUTHUE", "MaPhieuThue = " + txtMaPhieuThue.Text.ToString()).Rows[0]["NgayKetThuc"].ToString()))
+                {
+                    DTRent.update("NgayKetThuc = '" + DateTime.ParseExact(dtNgayTra.Text, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss") + "'", "MaPhieuThue = " + txtMaPhieuThue.Text.ToString());
+                }
+                loadHoaDon();
+
                 DTBill.update("TinhTrang = 2", "MaHoaDon = " + txtSoBill.Text);
                 Phong.update("PHONG", "TinhTrangPhong = -1", "MaPhong = " + txtSoPhong.Tag.ToString());
                 DTRent.update("TinhTrangPhieuThue = 2", "MaPhieuThue = " + txtMaPhieuThue.Text.ToString());
