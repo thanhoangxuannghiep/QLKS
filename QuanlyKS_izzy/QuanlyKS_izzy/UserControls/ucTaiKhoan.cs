@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using BUS;
+using DevExpress.XtraGrid;
 
 namespace QuanlyKS_izzy.UserControls
 {
@@ -180,14 +181,6 @@ namespace QuanlyKS_izzy.UserControls
             {
                 MessageBox.Show(label11.Text + " không hợp lệ !", "Lỗi");
             }
-            if (!check_email(email) && email != "")
-            {
-                MessageBox.Show(label11.Text + " đã tồn tại !", "Lỗi");
-            }
-            if (!check_username(txtUsername.Text) && txtUsername.Text != "")
-            {
-                MessageBox.Show(label8.Text + " đã tồn tại !", "Lỗi");
-            }
             string stt = cboTrangThai.Text;
             string stt_temp;
             if (stt == "Đang hoạt động")
@@ -213,7 +206,7 @@ namespace QuanlyKS_izzy.UserControls
             string _where = "MaTaiKhoan = '" + txtMaTk.Text + "'";
             if (TaiKhoanBUS.update(value, _where) == -1)
             {
-                MessageBox.Show("Thêm Tài Khoản thành công !", "Thông báo");
+                MessageBox.Show("Cập nhật Tài Khoản thành công !", "Thông báo");
                 gridControlTaiKhoan.DataSource = null;
                 gridControlTaiKhoan.DataSource = TaiKhoanBUS.getAll();
             }
@@ -263,6 +256,23 @@ namespace QuanlyKS_izzy.UserControls
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridControlTaiKhoan_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+
+        }
+
+        private void gridView_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            int[] selectedRow = gridView.GetSelectedRows();
+            txtMaTk.Text = gridView.GetFocusedDataRow()["MaTaiKhoan"].ToString();
+            txtTenNV.Text = gridView.GetFocusedDataRow()["HoTen"].ToString();
+            txtEmail.Text = gridView.GetFocusedDataRow()["email"].ToString();
+            txtSoCMND.Text = gridView.GetFocusedDataRow()["SoCMND"].ToString();
+            txtUsername.Text = gridView.GetFocusedDataRow()["Username"].ToString();
+            txtSoDT.Text = gridView.GetFocusedDataRow()["SoDienThoai"].ToString();
         }
     }
 }
